@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include eduone *.css
+recursive-include eduone *.csv
+recursive-include eduone *.html
+recursive-include eduone *.ico
+recursive-include eduone *.js
+recursive-include eduone *.json
+recursive-include eduone *.md
+recursive-include eduone *.png
+recursive-include eduone *.py
+recursive-include eduone *.svg
+recursive-include eduone *.txt
+recursive-exclude eduone *.pyc
