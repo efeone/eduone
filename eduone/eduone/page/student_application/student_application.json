@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2021-09-16 17:23:40.850334",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2021-09-16 17:23:54.396664",
+ "modified_by": "Administrator",
+ "module": "eduone",
+ "name": "student-application",
+ "owner": "Administrator",
+ "page_name": "student-application",
+ "roles": [
+  {
+   "role": "All"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Student Application"
+}
