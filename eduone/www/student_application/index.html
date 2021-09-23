@@ -1,0 +1,841 @@
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/student_application/index.js"></script>
+<script src="/assets/frappe/js/lib/socket.io.min.js"></script>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+body{
+  /*height: 500vh;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #0a88dc, #ffffff);
+
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+select {
+        width: 250px;
+        height: 35px;
+        margin: 10px;
+        border-radius: 5px;
+        outline-color: #0a88dc;
+        background-color: #edf0f5;
+    }
+    select:focus {
+        min-width: 150px;
+        width: auto;
+    }
+user-details .input-box input:valid{
+  border-color: #0a88dc;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 90%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #0a88dc;
+}  
+textarea {
+  outline-color: #0a88dc;
+}
+
+h1 {
+  text-align: center;  
+}
+form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 400;
+ }
+form .dob-details .dob-title{
+  font-size: 20px;
+  font-weight: 400;
+ } 
+form .com-details .com-title{
+  font-size: 20px;
+  font-weight: 400;
+ } 
+form .cou-details .cou-title{
+  font-size: 20px;
+  font-weight: 400;
+ } 
+form .add-details .add-title{
+  font-size: 20px;
+  font-weight: 600;
+ } 
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+} 
+button {
+  background-color: #04AA6D;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #00ff00;
+}
+</style>
+<body>
+
+<form id="regForm" action="/action_page.php">
+  <h1>STUDENT APPLICATION FORM</h1>
+  <br>
+  <hr>
+  <br>
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">
+    <h3>Personal Details</h3>
+    <br>
+  <!-- <div>
+  <label style=""> Application Number: </label> 
+  <input type="text" name="application" placeholder="Application Number" size="12" required />   
+</div>  -->
+<div class="user-details">
+  <div class="row">
+<div class="col-sm-4">
+  <div class="input-box">
+  <label>Firstname:</label> 
+  <br>  
+<input type="text" name="firstname" id="firstname" placeholder= "Firstname" size="15" required />  
+</div>
+</div>
+<div class="col-sm-4">
+  <div class="input-box">
+<div class="input-box"> 
+<label>Middlename:</label> 
+<br>  
+<input type="text" name="middlename" id="middlename" placeholder="Middlename" size="15" />
+</div>  
+</div>
+</div>   
+<div class="col-sm-4"> 
+  <div class="input-box">
+<label>Lastname:</label> 
+<br>  
+<input type="text" name="lastname" id="lastname" placeholder="Lastname" size="15" required />  
+</div>
+</div>
+</div>
+</div>
+<br><br>
+            <div class="row">
+            <div class="col-sm-6">
+    <div class="gender-details">
+          <div class="input-box">
+         <label class="gender-title">Gender:</label>
+            <select style="width: 250px;height: 39px;border-radius: 5px;" id="gender" name="gender">
+            <option value=""></option>  
+            <option value="Male" selected>Male</option>  
+            <option value="Female">Female</option>  
+            <option value="Other">Other</option>  
+            <option value="Transgender">Transgender</option>  
+            <option value="Genderqueer">Genderqueer</option>  
+            <option value="Non-Conforming">Non-Conforming</option>  
+            <option value="Prefer not to say">Prefer not to say</option>  
+            </select>
+            </div>  
+          </div>
+    </div>
+    <div class="col-sm-6">
+            <div class="user-details">
+             <div class="dob-details">
+              <!-- <div class="input-box"> -->
+          <label class="dob-title">DOB:</label>
+            <input type="date" id="dob" name="dob" style="width: 75%;border-radius: 5px;outline-color: #0a88dc;">
+          </div>
+        </div>
+      </div>
+    </div>
+<br><br>
+<div>
+  <div class="user-details">
+<label>   
+Mobile :  
+</label> 
+ <div class="row">
+  <div class="col-sm-6">
+     <div class="input-box">
+<input type="text" name="country code" placeholder="Country Code"  value="+91" size="2" readonly="Yes" />  
+  </div>
+</div>
+  <div class="col-sm-6">
+   <div class="input-box"> 
+<input type="text" name="phone" id="phone" placeholder="phone no." size="10"/ required>
+</div> 
+  </div>
+  </div> 
+</div>
+<br><br>
+<div>
+  <div class="user-details">
+  <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Aadhar Number: </label> 
+  <input type="text" name="aadhar" id="aadhar" placeholder="Aadhar Number" size="12" required /> 
+  </div>
+</div>
+  <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+ <label for="email"><b>Email:</b></label><br>  
+ <input type="text" placeholder="Enter Email" name="email" id="email" required> 
+ </div> 
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div> 
+<div class="row">
+  
+    <div class="col-sm-6"> 
+<div class="com-details">
+         <label class="com-title">communinity Details:</label>   
+          <select style="width: 145px;height: 35px;border-radius: 5px;" id="cast" name="cast">
+          <option value=""></option>  
+          <option value="General">General</option>  
+          <option value="OBC">OBC</option>  
+          <option value="SC ST">SC ST</option>  
+          <!-- <option value="H">Humanities </option>  
+          <option value=""></option>  
+          <option value=""></option>  
+          <option value=""></option>  --> 
+          </select>  
+          </div>
+</div>
+    <div class="col-sm-6">
+<div class="com-details">
+         <label class="com-title">Religion:</label>   
+          <select id="religion" name="religion">
+          <option value=""></option>  
+          <option value="Christian">Christian</option>  
+          <option value="Hindu">Hindu</option>  
+          <option value="Islam">Islam</option>  
+          <option value="Parsi">Parsi</option>  
+          <!-- <option value=""></option>  
+          <option value=""></option>  
+          <option value=""></option>  --> 
+          </select>  
+          </div>  
+          </div>
+</div>
+</div>
+<br>
+<div>
+  <div class="add-details">
+<label class="add-title">Address:</label>
+</div> 
+          <div class="cou-details">
+         <label class="cou-title">Country:</label>  
+          <select name="country" id="country" required>
+              <option value=""></option>
+              <option value="India" selected>India</option>
+              <option value="1">Russia</option>
+              <option value="2">Germany</option>
+              <option value="3">France</option>
+              <option value="4">Armenia</option>
+              <option value="5">USA</option>
+            </select> 
+          </div>
+            <br>
+            <div class="user-details">
+             <div class="row">
+               <div class="col-sm-6">
+                 <div class="input-box">
+                  <span style="font-size: 18px;">Permanent Address</span>
+                  <br>
+          <textarea name="permanent" id="permanent" style="width: 350px; height: 100px; border: 1px solid #aaaaaa;border-radius: 5px;resize: none;" required>
+          </textarea>
+        </div>
+        </div>
+        <div class="col-sm-6">
+           <div class="input-box">
+            <span style="font-size: 18px;">Communication Address</span>
+            <br>
+            <textarea  name="communinication" id="communinication" style="width: 350px; height: 100px; border: 1px solid #aaaaaa;border-radius: 5px;resize: none;" required>
+          </textarea>
+        </div>
+        </div>
+      </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <span></span>
+              </div>
+              <div class="col-sm-6">
+                <input type="checkbox" name="homy" id="homy" style="width: 15px;height: 15px;border-radius: 5px;"/><span style="color:red;">&nbspSame as Permanent address</span>
+              </div>
+            </div>
+      <br><br>
+          <div class="city-item">
+              <div class="row">
+               <div class="col-sm-6">
+                 <div class="input-box">
+            <input type="text" name="permanent_pin" id="permanent_pin" placeholder="Pincode" required/>
+          </div>
+          </div>
+          <div class="col-sm-6">
+             <div class="input-box">
+            <input type="text" name="communinication_pin" id="communinication_pin" placeholder="Pincode" required/>
+          </div>
+        </div>
+          </div>
+          </div>
+          <br><br>
+          <div class="city-item">
+              <div class="row">
+               <div class="col-sm-3">
+                 <div class="input-box">
+            <input type="text" name="state" id="state" placeholder="State" required/>
+          </div>
+          </div>
+          <div class="col-sm-3">
+             <div class="input-box">
+            <input type="text" id="district" placeholder="District" required/>
+          </div>
+        </div>
+        <div class="col-sm-3">
+             <div class="input-box">
+            <input type="text" id="thaluk" placeholder="Thaluk" required/>
+          </div>
+        </div>
+         <div class="col-sm-3">
+             <div class="input-box">
+            <input type="text" id="village" placeholder="Village" required/>
+            <br><br><br><br>
+          </div>
+        </div>
+          </div>
+          </div>
+      </div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+  <div class="tab">
+    <h3>Educational Details</h3>
+    <div>
+      <br>
+  <div class="user-details">
+  <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Scheme: </label> 
+  <input type="text" id="scheme" placeholder="Scheme" size="12" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style=""><b>Registration Number</b></label>  
+ <input type="text" id="register_number" placeholder="Registration Number" size="12" required />
+ </div> 
+</div>
+</div>
+<br><br>
+<div class="row">
+<div class="col-sm-4">
+  <div class="input-box">
+  <label style=""> Month Pass: </label> 
+  <input type="text" id="monthpass" placeholder="Month Pass" size="12" required /> 
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="input-box">
+ <label style=""><b>Year Pass</b></label>  
+ <input type="text" id="yearpass" placeholder="Year Pass" size="12" required /> 
+ </div> 
+</div>
+<div class="col-sm-4">
+  <div class="input-box">
+ <label style=""><b>Passed in Board exam</b></label>  
+ <input type="text" id="passedexam" placeholder="Yes or No" size="12" required /> 
+ <br><br><br>
+ </div> 
+</div>
+</div>
+</div>
+</div>
+  </div>
+  <div class="tab">
+    <h2>Other Details</h2>
+        <div class="row">
+        <div class="col-sm-2">
+              <h4>Linguistic<br>minority:</h4>
+             <input type="radio" id="lm" name="lingmin" value="Yes">
+             <label for="">Yes</label><br>
+             <input type="radio" id="lm" name="lingmin" value="No">
+             <label for="">No</label>
+            </div>
+            <div class="col-sm-2">
+              <h4>Health<br>Club:</h4>
+             <input type="radio" id="hc" name="healcl" value="Yes">
+             <label for="">Yes</label><br>
+             <input type="radio" id="hc" name="healcl" value="No">
+             <label for="">No</label>
+            </div>
+            <div class="col-sm-2">
+              <h4>Minority<br>Language:</h4>
+             <input type="radio" id="ml" name="minolan" value="Yes">
+             <label for="">Yes</label><br>
+             <input type="radio" id="psg" name="minolan" value="No">
+             <label for="">No</label>
+        </div>
+              <div class="col-sm-2">
+              <h4>Wheather<br>Differently Abled?:</h4>
+             <input type="radio" id="wa" name="diffab" value="Yes">
+             <label for="">Yes</label><br>
+             <input type="radio" id="wa" name="diffab" value="No">
+             <label for="">No</label>
+        </div>
+              <div class="col-sm-2">
+              <h4>OH:<br></h4><br>
+             <input type="radio" id="oh" name="ohh" value="Yes">
+             <label for="">Yes</label><br>
+             <input type="radio" id="oh" name="ohh" value="No">
+             <label for="">No</label>
+</div>
+              <div class="col-sm-2">
+              <h4>Blind:</h4><br>
+             <input type="radio" id="bl" name="bd" value="Yes">
+             <label for="">Yes</label><br>
+             <input type="radio" id="bl" name="bd" value="No">
+             <label for="">No</label>
+</div>
+             <!--  <div class="col-sm-2">
+              <h4>Deaf:</h4><br>
+             <input type="radio" id="de" name="df" value="Yes">
+             <label for="">Yes</label><br>
+             <input type="radio" id="de" name="df" value="No">
+             <label for="">No</label>
+</div>
+              <div class="col-sm-2">
+              <h4>MR/Brain Diseases:</h4><br>
+             <input type="radio" id="mbr" name="mrb" value="Yes">
+             <label for="">Yes</label><br>
+             <input type="radio" id="mbr" name="mrb" value="No">
+             <label for="">No</label> -->
+             <br><br>
+           </div>
+</div>
+</div>
+  <div class="tab">
+    <h2>Extra Curricular Activities</h2> 
+    <div class="row">
+        <div class="col-sm-6">
+  <h4>Participation in Sports:</h4>
+ <input type="radio" id="group1" name="sports" value="State">
+ <label for="">State Level</label><br><br>
+ <input type="radio" id="group1" name="sports" value="Dist1">
+<label for="">Dist 1st(NPSL)</label><br>
+ <input type="radio" id="group1" name="sports" value="Dist2">
+ <label for="">Dist 2nd</label><br>
+<input type="radio" id="group1" name="sports" value="Dist0">
+<label for="">Dist 3nd</label><br>
+ <input type="radio" id="group1" name="sports" value="Dist3">
+ <label for="">Dist Level Part'in</label>
+</div>
+<div class="col-sm-6">
+  <h4>Participation in Youth Festival</h4>
+  <input type="radio" id="group2" name="youth" value="State1">
+ <label for="html">State Level</label><br>
+ <input type="radio" id="group2" name="youth" value="Dist7">
+<label for="css">Dist A(NPSL)</label><br>
+ <input type="radio" id="group2" name="youth" value="Dist4">
+ <label for="">Dist B</label><br>
+<input type="radio" id="group2" name="youth" value="Dist5">
+<label for="">Dist C</label><br>
+ <input type="radio" id="group2" name="youth" value="Dist6">
+ <label for="">Dist Level Part'in</label><br><br>
+</div>
+</div>
+<hr>
+ <h2>Co-Curricular Activities</h2>
+ <hr>
+ <h4><b>NTSE QUALIFIED</b></h4>
+   <div class="row">
+        <div class="col-sm-2">
+  <h4>State Science Fair:</h4>
+ <input type="radio" id="group3" name="science" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group3" name="science" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group3" name="science" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group3" name="science" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group3" name="science" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State Social Science Fair:</h4>
+   <input type="radio" id="group4" name="social" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group4" name="social" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group4" name="social" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group4" name="social" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group4" name="social" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State Maths Fair:</h4>
+   <input type="radio" id="group5" name="maths" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group5" name="maths" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group5" name="maths" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group5" name="maths" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group5" name="maths" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State IT <br>Fair:</h4>
+   <input type="radio" id="group6" name="it" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group6" name="it" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group6" name="it" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group6" name="it" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group6" name="it" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State Work Experience Fair:</h4>
+   <input type="radio" id="group7" name="work" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group7" name="work" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group7" name="work" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group7" name="work" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group7" name="work" value="E">
+ <label for="">E</label>
+</div>
+</div>
+<br>
+<br>
+ <div class="row">
+        <div class="col-sm-2">
+  <h4>Philately <br>Club:</h4>
+ <input type="radio" id="pc" name="philately" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="pc" name="philately" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Debating <br>Club:</h4>
+ <input type="radio" id="dc" name="debating" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="dc" name="dhilately" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Oratory <br>Club:</h4>
+ <input type="radio" id="oc" name="oratory" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="oc" name="oratory" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>IT <br>Club:</h4>
+ <input type="radio" id="ic" name="itc" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="oc" name="itc" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Literacy Contribution:</h4>
+ <input type="radio" id="lc" name="literacy" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="oc" name="literacy" value="No">
+ <label for="">No</label>
+</div>
+</div>
+<br>
+<br>
+<div class="row">
+        <div class="col-sm-2">
+  <h4>Red <br>Cross:</h4>
+ <input type="radio" id="rc" name="red" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="pc" name="red" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Social Science<br>Club:</h4>
+ <input type="radio" id="soc" name="socisc" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="soc" name="socisc" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Science<br>Club:</h4>
+ <input type="radio" id="sic" name="sciclub" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="sic" name="sciclub" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Environment/<br>Nature<br>Club:</h4>
+ <input type="radio" id="enc" name="envicl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="enc" name="envicl" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Forestry <br>Club:</h4>
+ <input type="radio" id="fc" name="forecl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="fc" name="forecl" value="No">
+ <label for="">No</label>
+</div>
+</div>
+
+<div class="row">
+        <div class="col-sm-2">
+  <h4>Maths<br>Cross:</h4>
+ <input type="radio" id="mc" name="matcl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="mc" name="matcl" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Health<br>Club:</h4>
+ <input type="radio" id="hc" name="healcl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="hc" name="healcl" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Participation in <br>Scout/Guide:</h4>
+ <input type="radio" id="psg" name="partsg" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="psg" name="partsg" value="No">
+ <label for="">No</label>
+ <br><br><br>
+</div>
+</div>
+  </div>
+
+
+   <div class="tab"><h2>Declaration by the Candidate</h2>
+      <p>I hereby declare that all the information given by me in this application is true and correct to the
+best of my knowledge and belief. I also note that if any of the above statements are found to be
+incorrect or false or any information or particulars have been suppressed or omitted there from, I
+am liable to be disqualified and my admission may be cancelled. I have read and understood the
+contents of the Admission Announcement for the various Programmes. I hereby permit the institute
+to use, display or transfer any of the details furnished by me in this form for complying with the
+admission formalities.</p>
+    
+
+  <center><fieldset id="yy" style="width: 30px;height: 30;">
+    <input type="checkbox" value="value1" name="yy" required="">
+  </fieldset></center>
+  <br><br><br>
+  </div>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      <button type="button" id="submitBtn" name="submitBtn" onclick="submitForm()">Submit</button>
+
+    </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+</form>
+
+<script>
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+    // document.getElementById("submitBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+    // document.getElementById("submitBtn").style.display = "none";
+  }
+  if (n == (x.length - 1)) {
+    // document.getElementById("nextBtn").innerHTML = "Submit";
+    // document.getElementById("submitBtn").style.display = "inline";
+    document.getElementById("nextBtn").style.display = "none";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+    // document.getElementById("submitBtn").style.display = "none";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+
+function setAddress(){
+  if ($("#homy").is(":checked")) {
+    $('#communinication').val($('#permanent').val());
+    $('#communinication').attr('disabled', 'disabled');
+  } else {
+    $('#communinication').removeAttr('disabled');
+  }
+}
+
+$('#homy').click(function(){
+  setAddress();
+})
+</script>
+
+</body>
+</html>

@@ -1,4 +1,6 @@
 from . import __version__ as app_version
+import frappe as _frappe
+from frappe import _
 
 app_name = "eduone"
 app_title = "eduone"
