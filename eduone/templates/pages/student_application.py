@@ -8,6 +8,6 @@ def get_context(context):
     context.show_search = True
 
 @frappe.whitelist(allow_guest=True)
-def create_student_applicantion(arg):
+def create_student_applicant(first_name, middle_name, last_name, program):
     print("xxxxxxxxxxxxxxxxxxxxxxx")
     pass
