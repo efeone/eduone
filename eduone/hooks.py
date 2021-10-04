@@ -19,8 +19,8 @@ app_license = "MIT"
 # app_include_js = "/assets/eduone/js/eduone.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/eduone/css/eduone.css"
-# web_include_js = "/assets/eduone/js/eduone.js"
+# web_include_css = "/assets/eduone/css/style.css"
+# web_include_js = "/assets/eduone/js/style.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "eduone/public/scss/website"

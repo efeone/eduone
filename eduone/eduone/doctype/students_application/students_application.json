@@ -1,0 +1,599 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2021-09-30 16:42:26.697575",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "personal_details_section",
+  "fname",
+  "lname",
+  "dob",
+  "aadhar_number",
+  "communinity_details",
+  "panchayat",
+  "column_break_8",
+  "mname",
+  "gender",
+  "email",
+  "mobile",
+  "religion",
+  "other",
+  "home_address_section",
+  "address_line_1",
+  "pincode",
+  "village",
+  "district",
+  "country",
+  "column_break_19",
+  "address_line_2",
+  "city",
+  "thaluk",
+  "state",
+  "parents_details_section",
+  "fathers_name",
+  "father_is_alive",
+  "guardians_name",
+  "column_break_29",
+  "mothers_name",
+  "mother_is_alive",
+  "occupation",
+  "educational_details_section",
+  "scheme",
+  "month_pass",
+  "column_break_28",
+  "registration_number",
+  "year_pass",
+  "grade_card_section",
+  "first_language_1",
+  "english",
+  "social_science",
+  "physics",
+  "mathematics",
+  "column_break_46",
+  "first_language_2",
+  "hindi",
+  "biology",
+  "chemistry",
+  "information_technology",
+  "other_details_section",
+  "linguistic_minority",
+  "health_club",
+  "blind",
+  "deaf",
+  "column_break_35",
+  "minority_language",
+  "oh",
+  "wheather_differently_abled",
+  "mrbrain_diseases",
+  "extra_curricular_activities_section",
+  "participation_in_sports",
+  "column_break_41",
+  "participation_in_youth_festival",
+  "co_curricular_activities_section",
+  "state_science_fair",
+  "state_maths_fair",
+  "state_it_fair",
+  "column_break_47",
+  "state_social_science_fair",
+  "state_work_experience_fair",
+  "clubs_section",
+  "philately_club",
+  "debating_club",
+  "oratory_club",
+  "it_club",
+  "literacy_contribution",
+  "red_cross",
+  "column_break_81",
+  "social_science_club",
+  "science_club",
+  "environmentnature_club",
+  "forestry_club",
+  "participation_in_scoutguide",
+  "maths_cross"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "SA-.YYYY.-"
+  },
+  {
+   "fieldname": "personal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "fname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "DOB"
+  },
+  {
+   "fieldname": "aadhar_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Aadhar Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "communinity_details",
+   "fieldtype": "Select",
+   "label": "Community Details",
+   "options": "\nGeneral\nOBC\nSC/ST"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mname",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther\nTransgender\nGenderqueer\nNon-Conforming\nPrefer not to say"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "religion",
+   "fieldtype": "Select",
+   "label": "Religion",
+   "options": "\nChristian\nHindu\nIslam\nParsi"
+  },
+  {
+   "fieldname": "home_address_section",
+   "fieldtype": "Section Break",
+   "label": "Home Address"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode"
+  },
+  {
+   "fieldname": "village",
+   "fieldtype": "Data",
+   "label": "Village"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "thaluk",
+   "fieldtype": "Data",
+   "label": "Thaluk"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "educational_details_section",
+   "fieldtype": "Section Break",
+   "label": "Educational Details"
+  },
+  {
+   "default": "SSLC(2020-2021)",
+   "fieldname": "scheme",
+   "fieldtype": "Select",
+   "label": "Scheme",
+   "options": "SSLC(2020-2021)"
+  },
+  {
+   "fieldname": "month_pass",
+   "fieldtype": "Data",
+   "label": "Month Pass"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "year_pass",
+   "fieldtype": "Data",
+   "label": "Year Pass"
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "linguistic_minority",
+   "fieldtype": "Check",
+   "label": "Linguistic Minority"
+  },
+  {
+   "default": "0",
+   "fieldname": "health_club",
+   "fieldtype": "Check",
+   "label": "Health Club"
+  },
+  {
+   "default": "0",
+   "fieldname": "blind",
+   "fieldtype": "Check",
+   "label": "Blind"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "minority_language",
+   "fieldtype": "Check",
+   "label": "Minority Language"
+  },
+  {
+   "default": "0",
+   "fieldname": "oh",
+   "fieldtype": "Check",
+   "label": "OH"
+  },
+  {
+   "default": "0",
+   "fieldname": "wheather_differently_abled",
+   "fieldtype": "Check",
+   "label": "Wheather Differently Abled?"
+  },
+  {
+   "fieldname": "extra_curricular_activities_section",
+   "fieldtype": "Section Break",
+   "label": "Extra Curricular Activities"
+  },
+  {
+   "fieldname": "participation_in_sports",
+   "fieldtype": "Select",
+   "label": "Participation in Sports",
+   "options": "\nState Level\nDist 1st(NPSL)\nDist 2nd\nDist 3nd\nDist Level Part'in"
+  },
+  {
+   "fieldname": "column_break_41",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "participation_in_youth_festival",
+   "fieldtype": "Select",
+   "label": "Participation in Youth Festival",
+   "options": "\nState Level\nDist A(NPSL)\nDist B\nDist C\nDist Level Part'in"
+  },
+  {
+   "fieldname": "co_curricular_activities_section",
+   "fieldtype": "Section Break",
+   "label": "Co Curricular Activities"
+  },
+  {
+   "fieldname": "state_science_fair",
+   "fieldtype": "Select",
+   "label": "State Science Fair",
+   "options": "\nA\nB\nC\nD\nE"
+  },
+  {
+   "fieldname": "state_maths_fair",
+   "fieldtype": "Select",
+   "label": "State Maths Fair",
+   "options": "\nA\nB\nC\nD\nE"
+  },
+  {
+   "fieldname": "state_it_fair",
+   "fieldtype": "Select",
+   "label": "State IT Fair",
+   "options": "\nA\nB\nC\nD\nE"
+  },
+  {
+   "fieldname": "column_break_47",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state_social_science_fair",
+   "fieldtype": "Select",
+   "label": "State Social Science Fair",
+   "options": "\nA\nB\nC\nD\nE"
+  },
+  {
+   "fieldname": "state_work_experience_fair",
+   "fieldtype": "Select",
+   "label": "State Work Experience Fair"
+  },
+  {
+   "fieldname": "parents_details_section",
+   "fieldtype": "Section Break",
+   "label": "Parents Details"
+  },
+  {
+   "fieldname": "fathers_name",
+   "fieldtype": "Data",
+   "label": "Father's Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "guardians_name",
+   "fieldtype": "Data",
+   "label": "Guardian's Name"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mothers_name",
+   "fieldtype": "Data",
+   "label": "Mother's Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "occupation",
+   "fieldtype": "Data",
+   "label": "Occupation "
+  },
+  {
+   "fieldname": "panchayat",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Panchayat",
+   "options": "\nThurayur\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "grade_card_section",
+   "fieldtype": "Section Break",
+   "label": "Grade Card"
+  },
+  {
+   "fieldname": "first_language_1",
+   "fieldtype": "Data",
+   "label": "First Language 1"
+  },
+  {
+   "fieldname": "english",
+   "fieldtype": "Data",
+   "label": " English"
+  },
+  {
+   "fieldname": "social_science",
+   "fieldtype": "Data",
+   "label": "Social Science"
+  },
+  {
+   "fieldname": "physics",
+   "fieldtype": "Data",
+   "label": "Physics"
+  },
+  {
+   "fieldname": "chemistry",
+   "fieldtype": "Data",
+   "label": " Chemistry"
+  },
+  {
+   "fieldname": "column_break_46",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_language_2",
+   "fieldtype": "Data",
+   "label": "First Language 2"
+  },
+  {
+   "fieldname": "hindi",
+   "fieldtype": "Data",
+   "label": "Hindi"
+  },
+  {
+   "fieldname": "biology",
+   "fieldtype": "Data",
+   "label": "Biology"
+  },
+  {
+   "fieldname": "mathematics",
+   "fieldtype": "Data",
+   "label": "Mathematics"
+  },
+  {
+   "fieldname": "information_technology",
+   "fieldtype": "Data",
+   "label": "Information Technology"
+  },
+  {
+   "fieldname": "father_is_alive",
+   "fieldtype": "Select",
+   "label": "Is Father Alive",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mother_is_alive",
+   "fieldtype": "Select",
+   "label": "Is Mother Alive",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "deaf",
+   "fieldtype": "Check",
+   "label": "Deaf"
+  },
+  {
+   "default": "0",
+   "fieldname": "mrbrain_diseases",
+   "fieldtype": "Check",
+   "label": "MR/Brain Diseases"
+  },
+  {
+   "fieldname": "clubs_section",
+   "fieldtype": "Section Break",
+   "label": "Clubs"
+  },
+  {
+   "default": "0",
+   "fieldname": "philately_club",
+   "fieldtype": "Check",
+   "label": "Philately Club"
+  },
+  {
+   "default": "0",
+   "fieldname": "debating_club",
+   "fieldtype": "Check",
+   "label": "Debating Club"
+  },
+  {
+   "default": "0",
+   "fieldname": "oratory_club",
+   "fieldtype": "Check",
+   "label": "Oratory Club"
+  },
+  {
+   "default": "0",
+   "fieldname": "it_club",
+   "fieldtype": "Check",
+   "label": "IT Club"
+  },
+  {
+   "default": "0",
+   "fieldname": "literacy_contribution",
+   "fieldtype": "Check",
+   "label": "Literacy Contribution"
+  },
+  {
+   "default": "0",
+   "fieldname": "red_cross",
+   "fieldtype": "Check",
+   "label": "Red Cross"
+  },
+  {
+   "fieldname": "column_break_81",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "social_science_club",
+   "fieldtype": "Check",
+   "label": "Social Science Club"
+  },
+  {
+   "default": "0",
+   "fieldname": "science_club",
+   "fieldtype": "Check",
+   "label": "Science Club"
+  },
+  {
+   "default": "0",
+   "fieldname": "environmentnature_club",
+   "fieldtype": "Check",
+   "label": "Environment/Nature Club"
+  },
+  {
+   "default": "0",
+   "fieldname": "forestry_club",
+   "fieldtype": "Check",
+   "label": "Forestry Club"
+  },
+  {
+   "fieldname": "participation_in_scoutguide",
+   "fieldtype": "Data",
+   "label": "Participation in Scout/Guide"
+  },
+  {
+   "default": "0",
+   "fieldname": "maths_cross",
+   "fieldtype": "Check",
+   "label": "Maths Cross"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-10-02 10:41:32.326380",
+ "modified_by": "Administrator",
+ "module": "eduone",
+ "name": "Students Application",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
