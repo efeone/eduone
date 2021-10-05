@@ -184,3 +184,8 @@ web_include_js = "/assets/eduone/js/script.js"
 # 	"eduone.auth.validate"
 # ]
 
+fixtures = [
+	{
+		"dt": "Custom Field"
+	}
+]
