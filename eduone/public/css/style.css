@@ -1,0 +1,299 @@
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+body{
+  /*height: 500vh;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background: linear-gradient(135deg, #0a88dc, #ffffff);
+
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 100%;
+  min-width: 700px;
+}
+select {
+        width: 250px;
+        height: 35px;
+        margin: 10px;
+        border-radius: 5px;
+        outline-color: #0a88dc;
+        background-color: #edf0f5;
+    }
+    select:focus {
+        min-width: 150px;
+        width: auto;
+    }
+user-details .input-box input:valid{
+  border-color: #0a88dc;
+}
+.user-details .input-box input{
+  height: 90px;
+  width: 90%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #0a88dc;
+}  
+textarea {
+  outline-color: #0a88dc;
+}
+
+h1 {
+  text-align: center;  
+}
+form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 400;
+ }
+form .dob-details .dob-title{
+  font-size: 20px;
+  font-weight: 400;
+ } 
+form .com-details .com-title{
+  font-size: 20px;
+  font-weight: 400;
+ } 
+form .cou-details .cou-title{
+  font-size: 20px;
+  font-weight: 400;
+ } 
+form .add-details .add-title{
+  font-size: 20px;
+  font-weight: 600;
+ } 
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+} 
+button {
+  background-color: #04AA6D;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #00ff00;
+}      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+body{
+  /*height: 500vh;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #0a88dc, #ffffff);
+
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+select {
+        width: 250px;
+        height: 35px;
+        margin: 10px;
+        border-radius: 5px;
+        outline-color: #0a88dc;
+        background-color: #edf0f5;
+    }
+    select:focus {
+        min-width: 150px;
+        width: auto;
+    }
+user-details .input-box input:valid{
+  border-color: #0a88dc;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 90%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #0a88dc;
+}  
+textarea {
+  outline-color: #0a88dc;
+}
+
+h1 {
+  text-align: center;  
+}
+form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 400;
+ }
+form .dob-details .dob-title{
+  font-size: 20px;
+  font-weight: 400;
+ } 
+form .com-details .com-title{
+  font-size: 20px;
+  font-weight: 400;
+ } 
+form .cou-details .cou-title{
+  font-size: 20px;
+  font-weight: 400;
+ } 
+form .add-details .add-title{
+  font-size: 20px;
+  font-weight: 600;
+ } 
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+} 
+button {
+  background-color: #04AA6D;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #00ff00;
+}

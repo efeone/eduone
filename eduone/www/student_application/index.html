@@ -1,0 +1,1137 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("Student Application") }}{% endblock %}
+
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="assets/js/moment-bundle.min.js"></script>
+<script src="/student_application/index.js"></script>
+<script src="/assets/eduone/js/script.js"></script>
+{% endblock %}
+
+{% block page_content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.0/css/line.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+   <!--  <link rel="stylesheet" href="assets/one_fm/assets/css/job_application.css"> -->
+ <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+   <!--  <link rel="stylesheet" type="text/css" href="/assets/eduone/css/style.css"> -->
+
+
+</head>
+
+<body>
+
+<form id="regForm" action="/action_page.php">
+  <h2>STUDENT APPLICATION FORM</h2>
+  <br>
+  <hr>
+  <br>
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">
+    <h3>Personal Details</h3>
+    <br>
+  <!-- <div>
+  <label style=""> Application Number: </label> 
+  <input type="text" name="application" placeholder="Application Number" size="12" required />   
+</div>  -->
+<div class="user-details">
+  <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label>Firstname:</label> 
+  <br>  
+<input type="text" name="firstname" id="firstname" placeholder= "Firstname" size="30" required />  
+</div>
+</div>
+<!-- <div class="col-sm-4">
+  <div class="input-box">
+<div class="input-box"> 
+<label>Middlename:</label> 
+<br>  
+<input type="text" name="middlename" id="middlename" placeholder="Middlename" size="20" />
+</div>  
+</div>
+</div>   --> 
+<div class="col-sm-6"> 
+  <div class="input-box">
+<label>Lastname:</label> 
+<br>  
+<input type="text" name="lastname" id="lastname" placeholder="Lastname" size="30" required />  
+</div>
+</div>
+</div>
+</div>
+<br><br>
+            <div class="row">
+            <div class="col-sm-6">
+    <div class="gender-details">
+          <div class="input-box">
+         <label class="gender-title">Gender:</label><br>
+            <select style="width: 55%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="gender" name="gender">
+            <option value=""></option>  
+            <option value="Male" selected>Male</option>  
+            <option value="Female">Female</option>  
+            <option value="Other">Other</option>  
+            <option value="Transgender">Transgender</option>  
+            <option value="Genderqueer">Genderqueer</option>  
+            <option value="Non-Conforming">Non-Conforming</option>  
+            <option value="Prefer not to say">Prefer not to say</option>  
+            </select>
+            </div>  
+          </div>
+    </div>
+    <div class="col-sm-6">
+            <div class="user-details">
+             <div class="dob-details">
+              <!-- <div class="input-box"> -->
+          <label class="dob-title">Date of Birth:</label><br>
+            <input type="date" id="date" name="dob" style="width: 55%;height: 40px;border-radius: 5px;outline-color: #0a88dc;">
+          </div>
+        </div>
+      </div>
+    </div>
+<br><br>
+<div>
+  <div class="user-details">
+<!-- <label>   
+Mobile :  
+</label>  -->
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Mobile: </label> <br>
+  <input type="text" name="country code" id="mobiles" placeholder="Country Code" value="+91" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Phone: </label><br> 
+  <input type="text" name="phone" id="phone" placeholder="Phone No" size="30" required /> 
+  </div>
+</div>
+</div>
+ <!-- <div class="row">
+  <div class="col-sm-6">
+     <div class="input-box">
+<input type="text" name="country code" id="mobiles" placeholder="Country Code"  value="+91" size="25"  />  
+  </div>
+</div>
+  <div class="col-sm-6">
+   <div class="input-box"> 
+<input type="text" name="phone" id="phone" placeholder="phone no." size="25"/ required>
+</div> 
+  </div>
+  </div> 
+</div> -->
+<br><br>
+<div>
+  <div class="user-details">
+    <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Aadhar Number: </label><br> 
+  <input type="text" name="aadhar" id="aadhar" placeholder="Aadhar Number" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Email: </label> <br>
+  <input type="text" name="email" id="email" placeholder="Enter Email" size="30" required /> 
+  </div>
+</div>
+</div>
+  <!-- <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Aadhar Number: </label> 
+  <input type="text" name="aadhar" id="aadhar" placeholder="Aadhar Number" size="20" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label for="email"><b>Email:</b></label><br>  
+ <input type="text" placeholder="Enter Email" name="email" id="email" size="20" required> 
+ </div> 
+</div>
+</div> -->
+</div>
+</div>
+<br><br>
+<div> 
+<div class="row">
+  
+    <div class="col-sm-6"> 
+<div class="com-details">
+         <label class="com-title">Communinity:</label><br>   
+          <select style="width: 55%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cast" name="cast">
+          <option value=""></option>  
+          <option value="General">General</option>  
+          <option value="OBC">OBC</option>  
+          <option value="SC ST">SC ST</option>  
+          <!-- <option value="H">Humanities </option>  
+          <option value=""></option>  
+          <option value=""></option>  
+          <option value=""></option>  --> 
+          </select>  
+          </div>
+</div>
+    <div class="col-sm-6">
+      <div class="com-details">
+         <label class="com-title">Religion:</label> <br>  
+          <select style="width: 55%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="religions" name="religion">
+          <option value=""></option>  
+          <option value="Christian">Christian</option>  
+          <option value="Hindu">Hindu</option>  
+          <option value="Islam">Islam</option>  
+          <option value="Parsi">Parsi </option>  
+         <!--  <option value=""></option>  
+          <option value=""></option>  
+          <option value=""></option>  --> 
+          </select>  
+          </div>
+<!-- <div class="com-details">
+         <label class="com-title">Religion:</label>   
+          <select id="religions" name="religion">
+          <option value=""></option>  
+          <option value="Christian">Christian</option>  
+          <option value="Hindu">Hindu</option>  
+          <option value="Islam">Islam</option>  
+          <option value="Parsi">Parsi</option>  
+          <option value=""></option>  
+          <option value=""></option>  
+          <option value=""></option>  
+          </select>  
+          </div>  --> 
+          </div>
+</div>
+</div>
+<br><br>
+<div>
+  <div class="add-details">
+</div>  
+<div class="user-details">
+<div class="row">
+    <div class="col-sm-6"> 
+          <div class="cou-details">
+            <label class="com-title">Panchayat:</label> <br>  
+          <select style="width: 55%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="panchaya" name="pancha">
+          <option value=""></option>
+              <option value="Thurayur" selected>Thurayur</option>
+              <option value="Others">Others</option>
+          </select> 
+         <!-- <label class="cou-title">Panchayat:</label>  
+          <select name="pancha" id="panchaya" required>
+              <option value=""></option>
+              <option value="Thurayur" selected>Thurayur</option>
+              <option value="Others">Others</option>
+            </select>  -->
+          </div>
+        </div>
+        <div class="col-sm-6">
+       <div class="input-box">
+           <label style=""> Others: </label><br> 
+         <input type="text" name="other" id="others" placeholder="Other Panchayat" size="30" required /> 
+      </div>
+      </div>
+    </div>
+  </div>
+            <br>
+            <div class="user-details">
+             <div class="row">
+               <div class="col-sm-6">
+                 <div class="input-box">
+                  <span style="font-size: 18px;">Permanent Address</span>
+                  <br>
+          <textarea name="permanent" id="permanent" style="width: 300px; height: 100px; border: 1px solid #aaaaaa;border-radius: 10px;resize: none;outline-color: #0a88dc;" required>
+          </textarea>
+        </div>
+        </div>
+        <div class="col-sm-6">
+           <div class="input-box">
+            <span style="font-size: 18px;">Communication Address</span>
+            <br>
+            <textarea  name="communinication" id="communinication" style="width: 300px; height: 100px; border: 1px solid #aaaaaa;border-radius: 10px;resize: none;outline-color: #0a88dc;" required>
+          </textarea>
+        </div>
+        </div>
+      </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <span></span>
+              </div>
+              <div class="col-sm-6">
+                <input type="checkbox" name="homy" id="homy" style="width: 15px;height: 15px;border-radius: 5px;"/><span style="color:red;">&nbspSame as Permanent address</span>
+              </div>
+            </div>
+      <br>
+          <div class="city-item">
+              <div class="row">
+               <div class="col-sm-6">
+                 <div class="input-box">
+                  <label style=""> Pincode: </label><br> 
+            <input type="text" name="permanent_pin" id="permanent_pin" size="30" required/>
+          </div>
+          </div>
+          <div class="col-sm-6">
+             <div class="input-box">
+              <label style=""> Pincode: </label><br>
+            <input type="text" name="communinication_pin" id="communinication_pin"  size="30" required/>
+          </div>
+        </div>
+          </div>
+          </div>
+          <br>
+          <div class="city-item">
+            <div class="row">
+         <div class="col-sm-6">
+             <div class="input-box">
+                <label style=""> State: </label><br> 
+            <input type="text" id="states" placeholder="State" size="30" required/>
+          </div>
+        </div>
+        <div class="col-sm-6">
+             <div class="input-box">
+              <label style=""> District: </label><br> 
+            <input type="text" id="district" placeholder="District" size="30" required/>
+          </div>
+        </div>
+      </div>
+        <br>
+        <div class="row">
+         <div class="col-sm-6">
+             <div class="input-box">
+                <label style=""> Thaluk: </label><br> 
+            <input type="text" id="thaluks" placeholder="Thaluk" size="30" required/>
+          </div>
+        </div>
+        <div class="col-sm-6">
+             <div class="input-box">
+              <label style=""> Village: </label><br> 
+            <input type="text" id="villages" placeholder="Village" size="30" required/>
+          </div>
+        </div>
+      </div>
+          </div>
+          </div>
+      </div>
+      <div>
+        <br><br>
+    <div class="add-details">
+<h3>Parents Details:</h3>
+</div> 
+  <div class="user-details">
+  <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Father Name: </label> <br>
+  <input type="text" name="father" id="fathname" placeholder="Father Name" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Mother Name: </label><br> 
+  <input type="text" name="mother" id="mothname" placeholder="Mother Name" size="30" required /> 
+  </div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class="row">
+        <div class="col-sm-6">
+          <label class="com-title">Is Alive:</label> <br>  
+          <select style="width: 55%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="fathalive" name="fathlive">
+          <option value=""></option>
+              <option value="Yes" selected>Yes</option>
+              <option value="No">No</option>
+          </select> 
+          <!-- <label class="cou-title">Is Alive:</label>  
+          <select name="fathlive" id="fathalive" required>
+              <option value=""></option>
+              <option value="Yes" selected>Yes</option>
+              <option value="No">No</option>
+            </select>  -->
+            </div>
+            <div class="col-sm-6">
+              <label class="com-title">Is Alive:</label> <br>  
+          <select style="width: 55%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="motalive" name="mothlive">
+          <option value=""></option>
+              <option value="Yes" selected>Yes</option>
+              <option value="No">No</option>
+          </select>
+             <!--  <label class="cou-title">Is Alive:</label>  
+          <select name="mothlive" id="motalive" required>
+              <option value=""></option>
+              <option value="Yes" selected>Yes</option>
+              <option value="No">No</option>
+            </select>  -->
+          </div>
+</div>
+<br>
+ <div class="user-details">
+  <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style="">Guardian Name: </label><br> 
+  <input type="text" name="guardian" id="gurd" placeholder="Guardian Name" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Occupation: </label><br> 
+  <input type="text" name="occupation" id="occu" placeholder="Occupation" size="30" required /> 
+  </div>
+</div>
+</div>
+</div>
+<br><br><br>
+ <h3>Educational Details</h3>
+    <div>
+      <br>
+  <div class="user-details">
+  <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+    <label class="com-title">Scheme:</label> <br>  
+          <select style="width: 55%;height: 40px;border-radius: 5px;" id="schem" name="scheme">
+          <option value=""></option>
+              <option value="2020-21" selected>2020-21</option>
+          </select>
+<!--   <label style=""> Scheme: </label><br> 
+   <select name="scheme" id="schem" required>
+              <option value=""></option>
+              <option value="2020-21" selected>2020-21</option>
+            </select>  -->
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style="">Registration Number</label><br>  
+ <input type="text" id="register_number" placeholder="Registration Number" size="30" required />
+ </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Month Pass: </label><br> 
+  <input type="text" id="monthpass" placeholder="Month Pass" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style=""><b>Year Pass</b></label><br>  
+ <input type="text" id="yearpass" placeholder="Year Pass" size="30" required /> 
+ </div> 
+</div>
+<!-- <div class="col-sm-4">
+  <div class="input-box">
+ <label style=""><b>Passed in Board exam</b></label>  
+ <input type="text" id="passedexam" placeholder="Yes or No" size="12" required />  -->
+ <br><br><br>
+ <!-- </div> 
+</div> -->
+</div>
+</div>
+</div>
+<br><br>
+ <h2>Grade Card</h2>
+      <br>
+<div class="user-details">
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> First Language I: </label><br> 
+  <input type="text" id="firstlang" placeholder="First Language I" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style="">First Language II:</label><br>  
+ <input type="text" id="secondlang" placeholder="First Language  II" size="30" required /> 
+ </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style="">  English: </label><br> 
+  <input type="text" id="engli" placeholder=" English" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style="">Hindi:</label><br>  
+ <input type="text" id="hind" placeholder="Hindi" size="30" required /> 
+ </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Social Science: </label><br> 
+  <input type="text" id="social" placeholder="Social Science" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style="">Biology:</label><br>  
+ <input type="text" id="biolo" placeholder="Biology" size="30" required /> 
+ </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Physics: </label><br> 
+  <input type="text" id="physi" placeholder="Physics" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style="">Chemistry:</label><br>  
+ <input type="text" id="chemi" placeholder="Chemistry" size="30" required /> 
+ </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Mathematics:</label><br> 
+  <input type="text" id="maths" placeholder="Mathematics" size="30" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style="">Information Technology:</label><br>
+ <input type="text" id="infotec" placeholder="Information Technology" size="30" required /> 
+ </div> 
+</div>
+</div>
+</div>
+<br><br><br>
+ <h2>Extra Curricular Activities</h2> 
+ <br>
+    <div class="row">
+        <div class="col-sm-6">
+  <h5>Participation in Sports:</h5><br>
+   <select style="width: 55%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" name="sports" id="partsports" required>
+              <option value=""></option>
+              <option value="State Level" selected>State Level</option>
+              <option value="Dist 1st(NPSL)">Dist 1st(NPSL)</option>
+              <option value="Dist 2nd">Dist 2nd</option>
+              <option value="Dist 3nd">Dist 3nd</option>
+              <option value="Dist Level Part'in">Dist Level Part'in/option>
+            </select> 
+ <!-- <input type="radio" id="group1" name="sports" value="State">
+ <label for="">State Level</label><br><br>
+ <input type="radio" id="group1" name="sports" value="Dist1">
+<label for="">Dist 1st(NPSL)</label><br>
+ <input type="radio" id="group1" name="sports" value="Dist2">
+ <label for="">Dist 2nd</label><br>
+<input type="radio" id="group1" name="sports" value="Dist0">
+<label for="">Dist 3nd</label><br>
+ <input type="radio" id="group1" name="sports" value="Dist3">
+ <label for="">Dist Level Part'in</label> -->
+</div>
+<div class="col-sm-6">
+  <h5>Participation in Youth Festival</h5><br>
+  <select style="width: 55%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" name="festival" id="partfest" required>
+              <option value=""></option>
+              <option value="State Level" selected>State Level</option>
+              <option value="Dist 1st(NPSL)">Dist A(NPSL)</option>
+              <option value="Dist 2nd">Dist B</option>
+              <option value="Dist 3nd">Dist C</option>
+              <option value="Dist Level Part'in">Dist Level Part'in/option>
+            </select> 
+  <!-- <input type="radio" id="group2" name="youth" value="State1">
+ <label for="html">State Level</label><br>
+ <input type="radio" id="group2" name="youth" value="Dist7">
+<label for="css">Dist A(NPSL)</label><br>
+ <input type="radio" id="group2" name="youth" value="Dist4">
+ <label for="">Dist B</label><br>
+<input type="radio" id="group2" name="youth" value="Dist5">
+<label for="">Dist C</label><br>
+ <input type="radio" id="group2" name="youth" value="Dist6">
+ <label for="">Dist Level Part'in</label> --><br><br>
+</div>
+</div>
+<!-- <hr>
+ <h2>Co-Curricular Activities</h2>
+ <hr>
+ <h4><b>NTSE QUALIFIED</b></h4>
+   <div class="row">
+        <div class="col-sm-2">
+  <h4>State Science Fair:</h4>
+ <input type="radio" id="group3" name="science" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group3" name="science" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group3" name="science" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group3" name="science" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group3" name="science" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State Social Science Fair:</h4>
+   <input type="radio" id="group4" name="social" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group4" name="social" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group4" name="social" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group4" name="social" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group4" name="social" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State Maths Fair:</h4>
+   <input type="radio" id="group5" name="maths" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group5" name="maths" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group5" name="maths" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group5" name="maths" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group5" name="maths" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State IT <br>Fair:</h4>
+   <input type="radio" id="group6" name="it" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group6" name="it" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group6" name="it" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group6" name="it" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group6" name="it" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State Work Experience Fair:</h4>
+   <input type="radio" id="group7" name="work" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group7" name="work" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group7" name="work" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group7" name="work" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group7" name="work" value="E">
+ <label for="">E</label>
+</div>
+</div>
+<br>
+<br>
+ <div class="row">
+        <div class="col-sm-2">
+  <h4>Philately <br>Club:</h4>
+ <input type="radio" id="pc" name="philately" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="pc" name="philately" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Debating <br>Club:</h4>
+ <input type="radio" id="dc" name="debating" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="dc" name="dhilately" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Oratory <br>Club:</h4>
+ <input type="radio" id="oc" name="oratory" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="oc" name="oratory" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>IT <br>Club:</h4>
+ <input type="radio" id="ic" name="itc" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="oc" name="itc" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Literacy Contribution:</h4>
+ <input type="radio" id="lc" name="literacy" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="oc" name="literacy" value="No">
+ <label for="">No</label>
+</div>
+</div>
+<br>
+<br>
+<div class="row">
+        <div class="col-sm-2">
+  <h4>Red <br>Cross:</h4>
+ <input type="radio" id="rc" name="red" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="pc" name="red" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Social Science<br>Club:</h4>
+ <input type="radio" id="soc" name="socisc" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="soc" name="socisc" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Science<br>Club:</h4>
+ <input type="radio" id="sic" name="sciclub" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="sic" name="sciclub" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Environment/<br>Nature<br>Club:</h4>
+ <input type="radio" id="enc" name="envicl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="enc" name="envicl" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Forestry <br>Club:</h4>
+ <input type="radio" id="fc" name="forecl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="fc" name="forecl" value="No">
+ <label for="">No</label>
+</div>
+</div>
+
+<div class="row">
+        <div class="col-sm-2">
+  <h4>Maths<br>Cross:</h4>
+ <input type="radio" id="mc" name="matcl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="mc" name="matcl" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Health<br>Club:</h4>
+ <input type="radio" id="hc" name="healcl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="hc" name="healcl" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Participation in <br>Scout/Guide:</h4>
+ <input type="radio" id="psg" name="partsg" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="psg" name="partsg" value="No">
+ <label for="">No</label> -->
+ <br><br><br>
+<!-- </div>
+<br><br>
+</div>
+</div>
+<br>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</div> -->
+  <!-- <div class="tab">
+    <h3>Educational Details</h3>
+    <div>
+      <br>
+  <div class="user-details">
+  <div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Scheme: </label> 
+   <select name="scheme" id="schem" required>
+              <option value=""></option>
+              <option value="2020-21" selected>2020-21</option>
+            </select> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style=""><b>Registration Number</b></label>  
+ <input type="text" id="register_number" placeholder="Registration Number" size="12" required />
+ </div> 
+</div>
+</div>
+<br><br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Month Pass: </label> 
+  <input type="text" id="monthpass" placeholder="Month Pass" size="12" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style=""><b>Year Pass</b></label>  
+ <input type="text" id="yearpass" placeholder="Year Pass" size="12" required /> 
+ </div> 
+</div>
+<div class="col-sm-4">
+  <div class="input-box">
+ <label style=""><b>Passed in Board exam</b></label>  
+ <input type="text" id="passedexam" placeholder="Yes or No" size="12" required /> 
+ <br><br><br>
+ </div> 
+</div>
+</div>
+</div>
+</div>
+  </div> -->
+<!--   <div class="tab">
+    <h2>Grade Card</h2>
+      <br>
+<div class="user-details">
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> First Language 1: </label> 
+  <input type="text" id="firstlang" placeholder="First Language 1" size="12" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style=""><b>First Language 2</b></label>  
+ <input type="text" id="secondlang" placeholder="First Language 2" size="12" required /> 
+ </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style="">  English: </label> 
+  <input type="text" id="engli" placeholder=" English" size="12" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style=""><b>Hindi:</b></label>  
+ <input type="text" id="hind" placeholder="Hindi" size="12" required /> 
+ </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Social Science: </label> 
+  <input type="text" id="social" placeholder="Social Science" size="12" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style=""><b>Biology:</b></label>  
+ <input type="text" id="biolo" placeholder="Biology" size="12" required /> 
+ </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Physics: </label> 
+  <input type="text" id="physi" placeholder="Physics" size="12" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style=""><b>Chemistry:</b></label>  
+ <input type="text" id="chemi" placeholder="Chemistry" size="12" required /> 
+ </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Mathematics:</label> 
+  <input type="text" id="maths" placeholder="Mathematics" size="12" required /> 
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style=""><b>Information Technology:</b></label>  
+ <input type="text" id="infotec" placeholder="Information Technology" size="12" required /> 
+ </div> 
+</div>
+</div>
+</div>
+</div> -->
+<!-- <br>
+  <div class="tab">
+    <h2>Extra Curricular Activities</h2> 
+    <div class="row">
+        <div class="col-sm-6">
+  <h4>Participation in Sports:</h4>
+   <select name="sports" id="partsports" required>
+              <option value=""></option>
+              <option value="State Level" selected>State Level</option>
+              <option value="Dist 1st(NPSL)">Dist 1st(NPSL)</option>
+              <option value="Dist 2nd">Dist 2nd</option>
+              <option value="Dist 3nd">Dist 3nd</option>
+              <option value="Dist Level Part'in">Dist Level Part'in/option>
+            </select>  -->
+ <!-- <input type="radio" id="group1" name="sports" value="State">
+ <label for="">State Level</label><br><br>
+ <input type="radio" id="group1" name="sports" value="Dist1">
+<label for="">Dist 1st(NPSL)</label><br>
+ <input type="radio" id="group1" name="sports" value="Dist2">
+ <label for="">Dist 2nd</label><br>
+<input type="radio" id="group1" name="sports" value="Dist0">
+<label for="">Dist 3nd</label><br>
+ <input type="radio" id="group1" name="sports" value="Dist3">
+ <label for="">Dist Level Part'in</label> -->
+<!-- </div>
+<div class="col-sm-6">
+  <h4>Participation in Youth Festival</h4>
+  <select name="festival" id="partfest" required>
+              <option value=""></option>
+              <option value="State Level" selected>State Level</option>
+              <option value="Dist 1st(NPSL)">Dist A(NPSL)</option>
+              <option value="Dist 2nd">Dist B</option>
+              <option value="Dist 3nd">Dist C</option>
+              <option value="Dist Level Part'in">Dist Level Part'in/option>
+            </select>  -->
+  <!-- <input type="radio" id="group2" name="youth" value="State1">
+ <label for="html">State Level</label><br>
+ <input type="radio" id="group2" name="youth" value="Dist7">
+<label for="css">Dist A(NPSL)</label><br>
+ <input type="radio" id="group2" name="youth" value="Dist4">
+ <label for="">Dist B</label><br>
+<input type="radio" id="group2" name="youth" value="Dist5">
+<label for="">Dist C</label><br>
+ <input type="radio" id="group2" name="youth" value="Dist6">
+ <label for="">Dist Level Part'in</label> --><!-- <br><br> -->
+<!-- </div>
+</div> -->
+<!-- <hr>
+ <h2>Co-Curricular Activities</h2>
+ <hr>
+ <h4><b>NTSE QUALIFIED</b></h4>
+   <div class="row">
+        <div class="col-sm-2">
+  <h4>State Science Fair:</h4>
+ <input type="radio" id="group3" name="science" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group3" name="science" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group3" name="science" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group3" name="science" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group3" name="science" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State Social Science Fair:</h4>
+   <input type="radio" id="group4" name="social" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group4" name="social" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group4" name="social" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group4" name="social" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group4" name="social" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State Maths Fair:</h4>
+   <input type="radio" id="group5" name="maths" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group5" name="maths" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group5" name="maths" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group5" name="maths" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group5" name="maths" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State IT <br>Fair:</h4>
+   <input type="radio" id="group6" name="it" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group6" name="it" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group6" name="it" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group6" name="it" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group6" name="it" value="E">
+ <label for="">E</label>
+</div>
+<div class="col-sm-2">
+  <h4>State Work Experience Fair:</h4>
+   <input type="radio" id="group7" name="work" value="A">
+ <label for="">A</label><br>
+ <input type="radio" id="group7" name="work" value="B">
+<label for="">B</label><br>
+ <input type="radio" id="group7" name="work" value="C">
+ <label for="">C</label><br>
+<input type="radio" id="group7" name="work" value="D">
+<label for="">D</label><br>
+ <input type="radio" id="group7" name="work" value="E">
+ <label for="">E</label>
+</div>
+</div>
+<br>
+<br>
+ <div class="row">
+        <div class="col-sm-2">
+  <h4>Philately <br>Club:</h4>
+ <input type="radio" id="pc" name="philately" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="pc" name="philately" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Debating <br>Club:</h4>
+ <input type="radio" id="dc" name="debating" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="dc" name="dhilately" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Oratory <br>Club:</h4>
+ <input type="radio" id="oc" name="oratory" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="oc" name="oratory" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>IT <br>Club:</h4>
+ <input type="radio" id="ic" name="itc" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="oc" name="itc" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Literacy Contribution:</h4>
+ <input type="radio" id="lc" name="literacy" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="oc" name="literacy" value="No">
+ <label for="">No</label>
+</div>
+</div>
+<br>
+<br>
+<div class="row">
+        <div class="col-sm-2">
+  <h4>Red <br>Cross:</h4>
+ <input type="radio" id="rc" name="red" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="pc" name="red" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Social Science<br>Club:</h4>
+ <input type="radio" id="soc" name="socisc" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="soc" name="socisc" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Science<br>Club:</h4>
+ <input type="radio" id="sic" name="sciclub" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="sic" name="sciclub" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Environment/<br>Nature<br>Club:</h4>
+ <input type="radio" id="enc" name="envicl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="enc" name="envicl" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Forestry <br>Club:</h4>
+ <input type="radio" id="fc" name="forecl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="fc" name="forecl" value="No">
+ <label for="">No</label>
+</div>
+</div>
+
+<div class="row">
+        <div class="col-sm-2">
+  <h4>Maths<br>Cross:</h4>
+ <input type="radio" id="mc" name="matcl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="mc" name="matcl" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Health<br>Club:</h4>
+ <input type="radio" id="hc" name="healcl" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="hc" name="healcl" value="No">
+ <label for="">No</label>
+</div>
+<div class="col-sm-2">
+  <h4>Participation in <br>Scout/Guide:</h4>
+ <input type="radio" id="psg" name="partsg" value="Yes">
+ <label for="">Yes</label>
+ <input type="radio" id="psg" name="partsg" value="No">
+ <label for="">No</label> -->
+ <!-- <br><br><br>
+</div>
+</div>
+  </div> -->
+
+
+   <div class="tab"><h2>Declaration by the Candidate</h2>
+      <p>I hereby declare that all the information given by me in this application is true and correct to the
+best of my knowledge and belief. I also note that if any of the above statements are found to be
+incorrect or false or any information or particulars have been suppressed or omitted there from, I
+am liable to be disqualified and my admission may be cancelled. I have read and understood the
+contents of the Admission Announcement for the various Programmes. I hereby permit the institute
+to use, display or transfer any of the details furnished by me in this form for complying with the
+admission formalities.</p>
+    
+ <!--  <center>
+    <fieldset id="yy" style="width: 30px;height: 30;">
+          <label>Click</label>
+    <input type="checkbox" value="value1" name="yy" required="">
+  </fieldset></center> -->
+  <br><br><br>
+  </div>
+  <div style="overflow:auto;">
+        <div style="float:right;">
+          <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
+         <!--  <button type="button" id="nextBtn" onclick="nextPrev(1)" style="border: 2px solid #4CAF50;border-radius: 10px;">Next</button> -->
+          <button type="button" id="submitBtn" name="submitBtn" style="border: 2px solid #4CAF50;border-radius: 10px;">Submit</button>
+    
+        </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+<!--   <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div> -->
+</form>
+</body>
+{% endblock %}

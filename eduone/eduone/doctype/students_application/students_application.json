@@ -112,15 +112,13 @@
    "fieldname": "fname",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "First Name",
-   "reqd": 1
+   "label": "First Name"
   },
   {
    "fieldname": "lname",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Last Name",
-   "reqd": 1
+   "label": "Last Name"
   },
   {
    "fieldname": "dob",
@@ -131,8 +129,7 @@
    "fieldname": "aadhar_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Aadhar Number",
-   "reqd": 1
+   "label": "Aadhar Number"
   },
   {
    "fieldname": "communinity_details",
@@ -250,7 +247,6 @@
    "fieldname": "registration_number",
    "fieldtype": "Data",
    "label": "Registration Number",
-   "reqd": 1,
    "unique": 1
   },
   {
@@ -370,8 +366,7 @@
   {
    "fieldname": "fathers_name",
    "fieldtype": "Data",
-   "label": "Father's Name",
-   "reqd": 1
+   "label": "Father's Name"
   },
   {
    "fieldname": "guardians_name",
@@ -385,8 +380,7 @@
   {
    "fieldname": "mothers_name",
    "fieldtype": "Data",
-   "label": "Mother's Name",
-   "reqd": 1
+   "label": "Mother's Name"
   },
   {
    "fieldname": "occupation",
@@ -398,8 +392,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Panchayat",
-   "options": "\nThurayur\nOther",
-   "reqd": 1
+   "options": "\nThurayur\nOther"
   },
   {
    "fieldname": "other",
@@ -469,15 +462,13 @@
    "fieldname": "father_is_alive",
    "fieldtype": "Select",
    "label": "Is Father Alive",
-   "options": "\nYes\nNo",
-   "reqd": 1
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "mother_is_alive",
    "fieldtype": "Select",
    "label": "Is Mother Alive",
-   "options": "\nYes\nNo",
-   "reqd": 1
+   "options": "\nYes\nNo"
   },
   {
    "default": "0",
@@ -574,7 +565,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-10-02 10:41:32.326380",
+ "modified": "2021-10-04 13:08:17.534185",
  "modified_by": "Administrator",
  "module": "eduone",
  "name": "Students Application",
