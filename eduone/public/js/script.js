@@ -10,3 +10,16 @@ function setAddress(){
 $('#homy').click(function(){
   setAddress();
 })
+
+function disable()
+          {
+              document.getElementById("panchaya").disabled=true;
+          }
+          function enable()
+          {
+              document.getElementById("panchaya").disabled=false;
+          }
+
+$("#email").validate({
+  wrapper: "div"
+});

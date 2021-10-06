@@ -8,12 +8,13 @@ def get_context(context):
     context.show_search = True
 
 @frappe.whitelist(allow_guest=True)
-def create_student_application(first_name, last_name, gender, date_of_birth, aadhar_number, student_email_id, community_details, mobile, religion, address_line_1, address_line_2, pincode, district, thaluk, village, father_name, is_father_alive, mother_name, is_mother_alive, guardian_name, occupation_, scheme, month_pass, registration_number, year_pass, first_language_1, first_language_2, _english, hindi, social_science, biology, physics, chemistry, mathematics, information_technology, participation_in_sports, participation_in_youth_festival, panchayat, other, state):
+def create_student_application(first_name, middle_name, last_name, prefered_course, gender, date_of_birth, aadhar_number, student_email_id, community_details, mobile, religion, address_line_1, address_line_2, pincode, district, thaluk, village, father_name, is_father_alive, mother_name, is_mother_alive, guardian_name, occupation_, scheme, month_pass, registration_number, year_pass, first_language_1, first_language_2, _english, hindi, social_science, biology, physics, chemistry, mathematics, information_technology, participation_in_sports, participation_in_youth_festival, panchayat, other, state, student_mobile_number, boards_syllabus, country):
     print("testtttttttttttttttt")
     application = frappe.new_doc('Student Applicant')
     application.first_name = first_name
-    # application.middle_name = middle_name
+    application.middle_name = middle_name
     application.last_name = last_name
+    application.prefered_course = prefered_course
     application.gender = gender
     application.date_of_birth = date_of_birth
     application.aadhar_number = aadhar_number
@@ -52,6 +53,9 @@ def create_student_application(first_name, last_name, gender, date_of_birth, aad
     application.panchayat = panchayat
     application.other = other
     application.state = state
+    application.student_mobile_number = student_mobile_number
+    application.boards_syllabus = boards_syllabus
+    application.country = country
     application.program = "xxxxx"
     application.save(ignore_permissions=True)
     return 1
