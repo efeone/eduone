@@ -6,7 +6,7 @@
 <!-- <script src="https://code.jquery.com/jqury-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorgin="anonymous"></script> -->
 <script src="assets/js/moment-bundle.min.js"></script>
 <script src="/student_application/index.js"></script>
-<script src="/assets/eduone/js/gscript.js"></script>
+<script src="/assets/eduone/js/scriptedu.js"></script>
 {% endblock %}
 
 {% block page_content %}
@@ -30,7 +30,7 @@
 <form id="regForm" action="/action_page.php">
   <b><h2 style="font-family: Times New Roman, Times, serif;">STUDENT APPLICATION FORM</h2></b>
   <br>
-  <hr>
+  <hr style="margin-top: 0.5em;margin-bottom: 0.5em;border-style: outset;border-width: 1px;">
   <br>
   <!-- One "tab" for each step in the form: -->
   <div class="tab">
@@ -130,13 +130,13 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Mobile: </label> <br>
-  <input type="number" name="country code" id="mobiles" placeholder="Mobile" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+  <input type="text" name="country code" id="mobiles" placeholder="Mobile" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="mobilevalidation()"/> 
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Alternate Mobile: </label><br> 
-  <input type="number" name="phone" id="phone" placeholder="Alternate Mobile" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+  <input type="text" name="phone" id="phone" placeholder="Alternate Mobile" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="mobilevalidation()"/> 
   </div>
 </div>
 </div>
@@ -160,13 +160,13 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Aadhar Number: </label><br> 
-  <input type="number"  name="aadhar" id="aadhar" placeholder="Aadhar Number" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;resize: none;"/> 
+  <input type="text"  name="aadhar" id="aadhar" placeholder="Aadhar Number" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;resize: none;" onchange="aadharvalidation()" /> 
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Email: </label> <br>
-  <input type="text" name="email" id="email" placeholder="Enter Email" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+  <input type="email" name="email" id="email" placeholder="Enter Email" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="emailvalidation()" /> 
   </div>
 </div>
 </div>
@@ -246,8 +246,8 @@ Mobile :
             <label class="com-title">Panchayat:</label> <br>  
           <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="panchaya" name="pancha">
           <option value=""></option>
-              <option value="Thurayur" onSelect="disable();">Thurayur</option>
-              <option value="Others" onSelect="enable();">Others</option>
+              <option value="Thurayur">Thurayur</option>
+              <option value="Others">Others</option>
           </select> 
          <!-- <label class="cou-title">Panchayat:</label>  
           <select name="pancha" id="panchaya" required>
@@ -298,8 +298,8 @@ Mobile :
               <div class="row">
                <div class="col-sm-6">
                  <div class="input-box">
-                  <label style=""> Pincode: </label><br> 
-            <input type="number" name="permanent_pin" id="permanent_pin" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>
+                 <label style=""> Pincode: </label><br> 
+            <input type="text" name="permanent_pin" id="permanent_pin" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="pinvalidation()"/>
           </div>
           </div>
           <div class="col-sm-6">
@@ -369,7 +369,7 @@ Mobile :
 <br>
 <div class="row">
         <div class="col-sm-6">
-          <label class="com-title">Is Alive:</label> <br>  
+          <label class="com-title">Is Father Alive:</label> <br>  
           <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="fathalive" name="fathlive">
           <option value=""></option>
               <option value="Yes">Yes</option>
@@ -383,7 +383,7 @@ Mobile :
             </select>  -->
             </div>
             <div class="col-sm-6">
-              <label class="com-title">Is Alive:</label> <br>  
+              <label class="com-title">Is Mother Alive:</label> <br>  
           <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;"id="motalive" name="mothlive">
           <option value=""></option>
               <option value="Yes" >Yes</option>
@@ -439,7 +439,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">SSLC Registration Number</label><br>  
- <input type="number" id="register_number" placeholder="SSLC Registration Number" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>
+ <input type="text" id="register_number" placeholder="SSLC Registration Number" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="regivalidation()" />
  </div> 
 </div>
 </div>
@@ -1404,8 +1404,8 @@ admission formalities.</p>
     
   <center>
     <fieldset id="yy" style="width: 30px;height: 30;">
-          <p>Click</p>
-    <input type="checkbox" value="value1" name="yy" required="">
+    <h>Agreed</h>
+    <input type="checkbox" value="value1" name="yy" required="" style="border: 2px solid #0a88dc;">
   </fieldset></center>
   <br><br><br><br><br>
   </div>
