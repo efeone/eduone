@@ -3,10 +3,10 @@
 {% block title %}{{ _("Student Application") }}{% endblock %}
 
 {% block script %}
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<!-- <script src="https://code.jquery.com/jqury-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorgin="anonymous"></script> -->
 <script src="assets/js/moment-bundle.min.js"></script>
 <script src="/student_application/index.js"></script>
-<script src="/assets/eduone/js/script.js"></script>
+<script src="/assets/eduone/js/gscript.js"></script>
 {% endblock %}
 
 {% block page_content %}
@@ -160,7 +160,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Aadhar Number: </label><br> 
-  <input type="number" name="aadhar" id="aadhar" placeholder="Aadhar Number" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+  <input type="number"  name="aadhar" id="aadhar" placeholder="Aadhar Number" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;resize: none;"/> 
   </div>
 </div>
 <div class="col-sm-6">
@@ -496,26 +496,51 @@ Mobile :
  <h2 style="font-family: Times New Roman, Times, serif;">Grade Card</h2>
       <br>
       <label class="com-title"> Board Syllabus:</label> <br>  
-          <select style="width: 29%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="board" name="boardsyll">
+          <select style="width: 29%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="board" name="boardsyll" onchange="eduone()">
               <option value=""></option>
               <option value="State" >State</option>
               <option value="CBSE" >CBSE</option>
             <!--   <option value="2020" >2020</option>
               <option value="2021" >2021</option> -->
           </select>
-      <br><br><br>
+      <br><br>
+  <div id="statee" style="display: none;">
 <div class="user-details">
 <div class="row">
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> First Language I: </label><br> 
-  <input type="text" id="firstlang" placeholder="First Language I" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+        <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="firstlang" name="first">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select>
+  <!-- <input type="text" id="firstlang" placeholder="First Language I" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
- <label style="">First Language II:</label><br>  
- <input type="text" id="secondlang" placeholder="First Language  II" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+ <label style="">First Language II:</label><br>
+    <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="secondlang" name="second">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select>  
+ <!-- <input type="text" id="secondlang" placeholder="First Language  II" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
  </div> 
 </div>
 </div>
@@ -524,13 +549,37 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style="">  English: </label><br> 
-  <input type="text" id="engli" placeholder=" English" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="engli" name="english">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select> 
+  <!-- <input type="text" id="engli" placeholder=" English" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
- <label style="">Hindi:</label><br>  
- <input type="text" id="hind" placeholder="Hindi" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+ <label style="">Hindi:</label><br>
+ <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="hind" name="hindis">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select>   
+ <!-- <input type="text" id="hind" placeholder="Hindi" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
  </div> 
 </div>
 </div>
@@ -538,14 +587,38 @@ Mobile :
 <div class="row">
 <div class="col-sm-6">
   <div class="input-box">
-  <label style=""> Social Science: </label><br> 
-  <input type="text" id="social" placeholder="Social Science" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+  <label style=""> Social Science: </label><br>
+  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="social" name="socialsci">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select>    
+  <!-- <input type="text" id="social" placeholder="Social Science" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> --> 
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">Biology:</label><br>  
- <input type="text" id="biolo" placeholder="Biology" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+ <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="biolo" name="biology">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select>
+ <!-- <input type="text" id="biolo" placeholder="Biology" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> --> 
  </div> 
 </div>
 </div>
@@ -554,13 +627,123 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Physics: </label><br> 
-  <input type="text" id="physi" placeholder="Physics" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
-  </div>
+  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="physi" name="physics">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select>
+<!--   <input type="text" id="physi" placeholder="Physics" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+ -->  </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">Chemistry:</label><br>  
- <input type="text" id="chemi" placeholder="Chemistry" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+ <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="chemi" name="chemistry">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select>
+<!--  <input type="text" id="chemi" placeholder="Chemistry" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+ --> </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Mathematics:</label><br>
+  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="maths" name="mathsmatics">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select>
+ 
+  <!-- <input type="text" id="maths" placeholder="Mathematics" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style="">Information Technology:</label><br>
+ <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="infotec" name="inform">
+              <option value=""></option>
+              <option value="A+" >A+</option>
+              <option value="A" >A</option>
+              <option value="B+" >B+</option>
+              <option value="B" >B</option>
+              <option value="C+"> C+</option>
+              <option value="C" >C</option>
+              <option value=" D+" > D+</option>
+              <option value="D" >D</option>
+              <option value="E" >E</option>
+          </select>
+ <!-- <input type="text" id="infotec" placeholder="Information Technology" style="width: 60%;height: 40px;border-radius: 10px;outline-color: #0a88dc;"/>  -->
+ </div> 
+</div>
+</div>
+</div>
+</div>
+<br>
+
+<div id="cbses" style="display: none;">
+  <div class="user-details">
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style=""> Language I: </label><br> 
+  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbselangfirst" name="cbselangfirst">
+              <option value=""></option>
+              <option value="A1" >A1</option>
+              <option value="A2" >A2</option>
+              <option value="B1" >B1</option>
+              <option value="B2" >B2</option>
+              <option value="C1"> C1</option>
+              <option value="C2" >C2</option>
+              <option value=" D1" > D1</option>
+              <option value="D2" >D2</option>
+              <option value="E1" >E1</option>
+              <option value="E2" >E2</option>
+          </select>
+ <!--  <input type="text" id="cbselangfirst" placeholder="First Language I" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="input-box">
+ <label style="">Language II:</label><br>  
+  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbselangsecon" name="cbselangsecon">
+              <option value=""></option>
+              <option value="A1" >A1</option>
+              <option value="A2" >A2</option>
+              <option value="B1" >B1</option>
+              <option value="B2" >B2</option>
+              <option value="C1"> C1</option>
+              <option value="C2">C2</option>
+              <option value=" D1" > D1</option>
+              <option value="D2" >D2</option>
+              <option value="E1" >E1</option>
+              <option value="E2" >E2</option>
+          </select>
+ <!-- <input type="text" id="cbselangsecon" placeholder="First Language  II" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
  </div> 
 </div>
 </div>
@@ -568,15 +751,64 @@ Mobile :
 <div class="row">
 <div class="col-sm-6">
   <div class="input-box">
-  <label style=""> Mathematics:</label><br> 
-  <input type="text" id="maths" placeholder="Mathematics" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/> 
+  <label style="">   Mathematics: </label><br> 
+  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbsemaths" name="cbsemaths">
+              <option value=""></option>
+              <option value="A1" >A1</option>
+              <option value="A2" >A2</option>
+              <option value="B1" >B1</option>
+              <option value="B2" >B2</option>
+              <option value="C1"> C1</option>
+              <option value="C2" >C2</option>
+              <option value=" D1"> D1</option>
+              <option value="D2" >D2</option>
+              <option value="E1" >E1</option>
+              <option value="E2" >E2</option>
+          </select>
+  <!-- <input type="text" id="cbsemaths" placeholder=" English" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
- <label style="">Information Technology:</label><br>
- <input type="text" id="infotec" placeholder="Information Technology" style="width: 60%;height: 40px;border-radius: 10px;outline-color: #0a88dc;"/> 
+ <label style="">Science:</label><br>  
+ <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbsescience" name="cbsescience">
+              <option value=""></option>
+              <option value="A1" >A1</option>
+              <option value="A2" >A2</option>
+              <option value="B1" >B1</option>
+              <option value="B2" >B2</option>
+              <option value="C1"> C1</option>
+              <option value="C2" >C2</option>
+              <option value=" D1" > D1</option>
+              <option value="D2" >D2</option>
+              <option value="E1" >E1</option>
+              <option value="E2" >E2</option>
+          </select>
+ <!-- <input type="text" id="cbsescience" placeholder="Hindi" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
  </div> 
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="input-box">
+  <label style="">   Social Science: </label><br> 
+   <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbsesocial" name="cbsesocial">
+              <option value=""></option>
+              <option value="A1" >A1</option>
+              <option value="A2" >A2</option>
+              <option value="B1" >B1</option>
+              <option value="B2" >B2</option>
+              <option value="C1"> C1</option>
+              <option value="C2" >C2</option>
+              <option value=" D1"> D1</option>
+              <option value="D2" >D2</option>
+              <option value="E1" >E1</option>
+              <option value="E2" >E2</option>
+          </select>
+  <!-- <input type="text" id="cbsesocial" placeholder=" English" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>  -->
+  </div>
+</div>
 </div>
 </div>
 </div>

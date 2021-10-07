@@ -8,7 +8,7 @@ def get_context(context):
     context.show_search = True
 
 @frappe.whitelist(allow_guest=True)
-def create_student_application(first_name, middle_name, last_name, prefered_course, gender, date_of_birth, aadhar_number, student_email_id, community_details, mobile, religion, address_line_1, address_line_2, pincode, district, thaluk, village, father_name, is_father_alive, mother_name, is_mother_alive, guardian_name, occupation_, scheme, month_pass, registration_number, year_pass, first_language_1, first_language_2, _english, hindi, social_science, biology, physics, chemistry, mathematics, information_technology, participation_in_sports, participation_in_youth_festival, panchayat, other, state, student_mobile_number, boards_syllabus, country):
+def create_student_application(first_name, middle_name, last_name, prefered_course, gender, date_of_birth, aadhar_number, student_email_id, community_details, mobile, religion, address_line_1, address_line_2, pincode, district, thaluk, village, father_name, is_father_alive, mother_name, is_mother_alive, guardian_name, occupation_, scheme, month_pass, registration_number, year_pass, first_language_1, first_language_2, _english, hindi, social_science, biology, physics, chemistry, mathematics, information_technology, participation_in_sports, participation_in_arts, panchayat, other, state, student_mobile_number, boards_syllabus, country, language_1, language_2, mathematics_cbse, science_cbse, social_science_cbse):
     print("testtttttttttttttttt")
     application = frappe.new_doc('Student Applicant')
     application.first_name = first_name
@@ -49,13 +49,18 @@ def create_student_application(first_name, middle_name, last_name, prefered_cour
     application.mathematics = mathematics
     application.information_technology = information_technology
     application.participation_in_sports = participation_in_sports
-    application.participation_in_youth_festival = participation_in_youth_festival
+    application.participation_in_arts = participation_in_arts
     application.panchayat = panchayat
     application.other = other
     application.state = state
     application.student_mobile_number = student_mobile_number
     application.boards_syllabus = boards_syllabus
     application.country = country
+    application.language_1 = language_1
+    application.language_2 = language_2
+    application.mathematics_cbse = mathematics_cbse
+    application.science_cbse = science_cbse
+    application.social_science_cbse = social_science_cbse
     application.program = "xxxxx"
     application.save(ignore_permissions=True)
     return 1
