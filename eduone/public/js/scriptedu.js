@@ -112,6 +112,13 @@ function data(){
   var middle = document.getElementById("middlename").value;
   var last = document.getElementById("lastname").value;
   var other = document.getElementById("others").value;
+  var country = document.getElementById("count").value;
+  var state = document.getElementById("states").value;
+  var dist = document.getElementById("district").value;
+  var thalu = document.getElementById("thaluks").value;
+  var villa = document.getElementById("villages").value;
+  var fath = document.getElementById("fathname").value;
+  var month = document.getElementById("mothname").value;
   if(name){
     console.log(name.toString().length)
     if(!isNaN(name) || names.toString().length >30 )
@@ -158,6 +165,62 @@ function data(){
     {
       alert("Invalid details, Number not allowed!");
       document.getElementById("others").value = "";
+    }
+  }
+  if(country){
+    console.log(country.toString().length)
+    if(!isNaN(country) || country.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("count").value = "";
+    }
+  }
+  if(state){
+    console.log(state.toString().length)
+    if(!isNaN(state) || other.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("states").value = "";
+    }
+  }
+  if(dist){
+    console.log(dist.toString().length)
+    if(!isNaN(dist) || dist.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("district").value = "";
+    }
+  }
+  if(thalu){
+    console.log(thalu.toString().length)
+    if(!isNaN(thalu) || thalu.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("thaluks").value = "";
+    }
+  }
+  if(villa){
+    console.log(villa.toString().length)
+    if(!isNaN(villa) || villa.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("villages").value = "";
+    }
+  }
+  if(fath){
+    console.log(fath.toString().length)
+    if(!isNaN(fath) || fath.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("fathname").value = "";
+    }
+  }
+  if(month){
+    console.log(month.toString().length)
+    if(!isNaN(month) || month.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("mothname").value = "";
     }
   }
 }
