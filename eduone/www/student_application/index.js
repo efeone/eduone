@@ -141,7 +141,7 @@ const listOfSkills = [];
 // Submit
 const submitForm = () => {
     console.log("DDDDD")
-    if(!$('#firstname').val() && !$('#email').val() && !$('#register_number').val())
+    if(!$('#lastname').val() && !$('#pref').val() && !$('#panchaya').val() && !$('#board').val() && !$('#firstname').val() && !$('#email').val() && !$('#register_number').val())
     {
         frappe.throw("Mandatory Required!")
     }
