@@ -141,6 +141,11 @@ const listOfSkills = [];
 // Submit
 const submitForm = () => {
     console.log("DDDDD")
+    if(!$('#firstname').val() && !$('#email').val() && !$('#register_number').val())
+    {
+        frappe.throw("Mandatory Required!")
+    }
+
     var file_data = {};
     $("[type='file']").each(function(i){
       file_data[$(this).attr("id")] = $('#'+$(this).attr("id")).prop('filedata');

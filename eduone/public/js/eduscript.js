@@ -53,8 +53,9 @@ function mobilevalidation(){
   var moble = document.getElementById("mobiles").value;
   var phone = document.getElementById("phone").value;
   if(phone){
-    console.log(phone.toString().length)
-    if(isNaN(phone) || phone.toString().length >10 )
+    // console.log(phone.toString().length)
+    // if(isNaN(phone) || phone.toString().length >10 )
+    if(isNaN(phone))
     {
       alert("Invalid Mobile Number !");
       document.getElementById("phone").value = "";

@@ -61,6 +61,6 @@ def create_student_application(first_name, middle_name, last_name, prefered_cour
     application.mathematics_cbse = mathematics_cbse
     application.science_cbse = science_cbse
     application.social_science_cbse = social_science_cbse
-    application.program = "xxxxx"
+    application.flags.ignore_mandatory=True
     application.save(ignore_permissions=True)
     return 1
