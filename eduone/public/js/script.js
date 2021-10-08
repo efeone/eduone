@@ -104,3 +104,59 @@ function pinvalidation(){
     }
   }
 }
+function data(){
+  var name = document.getElementById("firstname").value;
+  var guid = document.getElementById("gurd").value;
+  var occup = document.getElementById("occu").value;
+  var middle = document.getElementById("middlename").value;
+  var last = document.getElementById("lastname").value;
+  var other = document.getElementById("others").value;
+  if(name){
+    console.log(name.toString().length)
+    if(!isNaN(name) || names.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("firstname").value = "";
+    }
+  }
+  if(guid){
+    console.log(guid.toString().length)
+    if(!isNaN(guid) || guid.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("gurd").value = "";
+    }
+  }
+   if(occup){
+    console.log(occup.toString().length)
+    if(!isNaN(occup) || occup.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("occu").value = "";
+    }
+  }
+   if(middle){
+    console.log(middle.toString().length)
+    if(!isNaN(middle) || middle.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("middlename").value = "";
+    }
+  }
+  if(last){
+    console.log(last.toString().length)
+    if(!isNaN(last) || last.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("lastname").value = "";
+    }
+  }
+  if(other){
+    console.log(other.toString().length)
+    if(!isNaN(other) || other.toString().length >30 )
+    {
+      alert("Invalid details, Number not allowed!");
+      document.getElementById("others").value = "";
+    }
+  }
+}
