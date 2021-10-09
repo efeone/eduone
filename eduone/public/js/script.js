@@ -224,3 +224,25 @@ function data(){
     }
   }
 }
+  function panch(){
+  console.log("tngbdfvd");
+  if (document.getElementById("panchaya").value == "") 
+  {
+      document.getElementById("others").style.display="none";
+      document.getElementById("othu").style.display="none";
+      console.log("wwwwwww");
+  }
+  if (document.getElementById("panchaya").value == "Thurayur") 
+  {
+      document.getElementById("others").style.display="none";
+      document.getElementById("othu").style.display="none";
+      console.log("wwwwwww");
+  }
+  if (document.getElementById("panchaya").value == "Others") 
+  {
+      document.getElementById("othu").style.display="block";
+      document.getElementById("others").style.display="block";
+      console.log("wwwwwww");
+  }
+
+}

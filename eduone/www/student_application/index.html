@@ -6,7 +6,7 @@
 <!-- <script src="https://code.jquery.com/jqury-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorgin="anonymous"></script> -->
 <script src="assets/js/moment-bundle.min.js"></script>
 <script src="/student_application/index.js"></script>
-<script src="/assets/eduone/js/scriptedu.js"></script>
+<script src="/assets/eduone/js/script.js"></script>
 {% endblock %}
 
 {% block page_content %}
@@ -244,7 +244,7 @@ Mobile :
     <div class="col-sm-6"> 
           <div class="cou-details">
             <label class="com-title">Panchayat&nbsp<span style="color: #FF0000;">*</span></label> <br>  
-          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="panchaya" name="pancha">
+          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="panchaya" name="pancha" onchange="panch()">
           <option value=""></option>
               <option value="Thurayur">Thurayur</option>
               <option value="Others">Others</option>
@@ -259,13 +259,14 @@ Mobile :
         </div>
         <div class="col-sm-6">
        <div class="input-box">
-           <label style=""> Others </label><br> 
-         <input type="text" name="other" id="others" placeholder="Other Panchayat" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/> 
+           <label id="othu" style="display: none;" onchange="panch()"> Others </label>
+         <input type="text" name="other" id="others" placeholder="Other Panchayat" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;display: none;" onchange="panch()"/> 
       </div>
       </div>
     </div>
   </div>
-            <br>
+  </div>
+            <br><br>
             <div class="user-details">
              <div class="row">
                <div class="col-sm-6">
@@ -1402,9 +1403,18 @@ contents of the Admission Announcement for the various Programmes. I hereby perm
 to use, display or transfer any of the details furnished by me in this form for complying with the
 admission formalities.</p>
     
-    <fieldset id="yy" style="width: 30px;height: 30;">
+    <p><fieldset>
+    <input id="agree" type="checkbox" value="value1" name="yy" required="" style="border: 2px solid #0a88dc;">
+    <label for="a">Agreed</label>
+    <!-- <input type="checkbox" id="b"> -->
+    <!-- depending on width, a linebreak can occur here. -->
+  <!--   <label for="b">b</label>
+    <input type="checkbox" id="c">
+    <label for="c">c</label> -->
+</fieldset></p>
+    <!-- <p><fieldset id="yy" style="width: 30px;height: 30;">
     <h>Agreed</h><input type="checkbox" value="value1" name="yy" required="" style="border: 2px solid #0a88dc;">
-  </fieldset>
+  </fieldset></p> -->
   <br><br><br><br><br>
   </div>
   <div style="overflow:auto;">

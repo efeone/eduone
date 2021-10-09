@@ -141,11 +141,34 @@ const listOfSkills = [];
 // Submit
 const submitForm = () => {
     console.log("DDDDD")
-    if(!$('#lastname').val() && !$('#pref').val() && !$('#panchaya').val() && !$('#board').val() && !$('#firstname').val() && !$('#email').val() && !$('#register_number').val())
+    if(!$('#lastname').val())
     {
         frappe.throw("Mandatory Required!")
     }
-
+    if(!$('#pref').val())
+    {
+        frappe.throw("Mandatory Required!")
+    }
+    if(!$('#panchaya').val())
+    {
+        frappe.throw("Mandatory Required!")
+    }
+    if(!$('#board').val())
+    {
+        frappe.throw("Mandatory Required!")
+    }
+    if(!$('#firstname').val())
+    {
+        frappe.throw("Mandatory Required!")
+    }
+    if(!$('#email').val())
+    {
+        frappe.throw("Mandatory Required!")
+    } 
+    if(!$('#register_number').val())
+    {
+        frappe.throw("Mandatory Required!")
+    } 
     var file_data = {};
     $("[type='file']").each(function(i){
       file_data[$(this).attr("id")] = $('#'+$(this).attr("id")).prop('filedata');
