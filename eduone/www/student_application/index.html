@@ -6,7 +6,7 @@
 <!-- <script src="https://code.jquery.com/jqury-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorgin="anonymous"></script> -->
 <script src="assets/js/moment-bundle.min.js"></script>
 <script src="/student_application/index.js"></script>
-<script src="/assets/eduone/js/script.js"></script>
+<script src="/assets/eduone/js/eduscript.js"></script>
 {% endblock %}
 
 {% block page_content %}
@@ -24,17 +24,18 @@
 
 
 </head>
-
-<body>
-
+<center>
+<body style="height: 100vh;align-items: center;background: linear-gradient(135deg, #e8edff, #e8edff);">
+  <div style="max-width: 900px;width: 100%;background-color: #fff;padding: 25px 30px;border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;border-radius: 10px;">
 <form id="regForm" action="/action_page.php">
-  <b><h2 style="font-family: Times New Roman, Times, serif;">STUDENT APPLICATION FORM</h2></b>
+  <b><h1 style="font-family: Times New Roman, Times, serif;">STUDENT APPLICATION FORM</h1></b>
   <br>
   <hr style="margin-top: 0.5em;margin-bottom: 0.5em;border-style: outset;border-width: 1px;">
   <br>
   <!-- One "tab" for each step in the form: -->
+  <br>
   <div class="tab">
-    <h3 style="font-family: Times New Roman, Times, serif;">Personal Details</h3>
+    <h3 style="font-family: Times New Roman, Times, serif;text-align: left !important;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPersonal Details</h3>
     <br>
   <!-- <div>
   <label style=""> Application Number: </label> 
@@ -44,9 +45,9 @@
   <div class="row">
 <div class="col-sm-6">
   <div class="input-box">
-  <label>First Name&nbsp<span style="color: #FF0000;">*</span></label> 
+  <label style="text-align: left !important;">First Name&nbsp<b><span style="color: #FF0000;">*</span></b></label> 
   <br>  
-<input type="text" name="firstname" id="firstname" placeholder= "Firstname" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/>  
+<input type="text" name="firstname" id="firstname" placeholder= "Firstname" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>  
 </div>
 </div>
 <!-- <div class="col-sm-4">
@@ -60,9 +61,9 @@
 </div>   --> 
 <div class="col-sm-6"> 
   <div class="input-box">
-<label>Middle Name</label> 
+<label style="text-align: left!;">Middle Name</label> 
 <br>  
-<input type="text" name="middlename" id="middlename" placeholder="Middlename" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/>  
+<input type="text" name="middlename" id="middlename" placeholder="Middlename" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>  
 </div>
 </div>
 </div>
@@ -72,15 +73,15 @@
   <div class="row">
 <div class="col-sm-6">
   <div class="input-box">
-  <label>Last Name&nbsp<span style="color: #FF0000;">*</span></label> 
+  <label>Last Name&nbsp<b><span style="color: #FF0000;">*</span></b></label> 
   <br>  
-<input type="text" name="lastname" id="lastname" placeholder= "Lastname" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/>  
+<input type="text" name="lastname" id="lastname" placeholder= "Lastname" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>  
 </div>
 </div>
 <div class="col-sm-6"> 
   <div class="input-box">
-<label class="gender-title">Prefered Course&nbsp<span style="color: #FF0000;">*</span></label><br>
-            <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="pref" name="prefcou">
+<label class="gender-title">Prefered Course&nbsp<b><span style="color: #FF0000;">*</span></b></label>
+            <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="pref" name="prefcou">
             <option value=""></option>  
             <option value="Computer Science">Computer Science</option>  
             <option value="Biology Science">Biology Science</option>  
@@ -97,7 +98,7 @@
     <div class="gender-details">
           <div class="input-box">
          <label class="gender-title">Gender</label><br>
-            <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="gender" name="gender">
+            <select style="width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="gender" name="gender">
             <option value=""></option>  
             <option value="Male">Male</option>  
             <option value="Female">Female</option>  
@@ -115,7 +116,7 @@
              <div class="dob-details">
               <!-- <div class="input-box"> -->
           <label class="dob-title">Date of Birth</label><br>
-            <input type="date" id="date" name="dob" style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;">
+            <input type="date" id="date" name="dob" style="width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;">
           </div>
         </div>
       </div>
@@ -130,13 +131,13 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Mobile </label> <br>
-  <input type="text" name="country code" id="mobiles" placeholder="+91" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="mobilevalidation()"/> 
+  <input type="text" name="country code" id="mobiles" placeholder="+91" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="mobilevalidation()"/> 
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Alternate Mobile </label><br> 
-  <input type="text" name="phone" id="phone" placeholder="Alternate Mobile" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="mobilevalidation()"/> 
+  <input type="text" name="phone" id="phone" placeholder="Alternate Mobile" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="mobilevalidation()"/> 
   </div>
 </div>
 </div>
@@ -160,13 +161,13 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Aadhar Number </label><br> 
-  <input type="text"  name="aadhar" id="aadhar" placeholder="Aadhar Number" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;resize: none;" onchange="aadharvalidation()" /> 
+  <input type="text"  name="aadhar" id="aadhar" placeholder="Aadhar Number" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="aadharvalidation()" /> 
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
-  <label style=""> Email &nbsp<span style="color: #FF0000;">*</span> </label> <br>
-  <input type="email" name="email" id="email" placeholder="Enter Email" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="emailvalidation()" /> 
+  <label style=""> Email &nbsp<b><span style="color: #FF0000;">*</span></b></label> <br>
+  <input type="email" name="email" id="email" placeholder="Enter Email" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="emailvalidation()" /> 
   </div>
 </div>
 </div>
@@ -193,7 +194,7 @@ Mobile :
     <div class="col-sm-6"> 
 <div class="com-details">
          <label class="com-title">Communinity</label><br>   
-          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cast" name="cast">
+          <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="cast" name="cast">
           <option value=""></option>  
           <option value="General">General</option>  
           <option value="OBC">OBC</option>  
@@ -208,7 +209,7 @@ Mobile :
     <div class="col-sm-6">
       <div class="com-details">
          <label class="com-title">Religion</label> <br>  
-          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="religions" name="religion">
+          <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="religions" name="religion">
           <option value=""></option>  
           <option value="Christian">Christian</option>  
           <option value="Hindu">Hindu</option>  
@@ -243,8 +244,8 @@ Mobile :
 <div class="row">
     <div class="col-sm-6"> 
           <div class="cou-details">
-            <label class="com-title">Panchayat&nbsp<span style="color: #FF0000;">*</span></label> <br>  
-          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="panchaya" name="pancha" onchange="panch()">
+            <label class="com-title">Panchayat&nbsp<b><span style="color: #FF0000;">*</span></b></label> <br>  
+          <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="panchaya" name="pancha" onchange="panch()">
           <option value=""></option>
               <option value="Thurayur">Thurayur</option>
               <option value="Others">Others</option>
@@ -260,7 +261,7 @@ Mobile :
         <div class="col-sm-6">
        <div class="input-box">
            <label id="othu" style="display: none;" onchange="panch()"> Others </label>
-         <input type="text" name="other" id="others" placeholder="Other Panchayat" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;display: none;" onchange="panch()"/> 
+         <input type="text" name="other" id="others" placeholder="Other Panchayat" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);display: none;" onchange="panch()"/> 
       </div>
       </div>
     </div>
@@ -273,7 +274,7 @@ Mobile :
                  <div class="input-box">
                   <span style="font-size: 18px;">Permanent Address</span>
                   <br>
-          <textarea name="permanent" id="permanent" style="width: 325px; height: 100px; border: 1px solid #aaaaaa;border-radius: 10px;resize: none;outline-color: #0a88dc;" required>
+          <textarea name="permanent" id="permanent" style="width: 75%; height: 100px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);resize: none;" required>
           </textarea>
         </div>
         </div>
@@ -281,7 +282,7 @@ Mobile :
            <div class="input-box">
             <span style="font-size: 18px;">Communication Address</span>
             <br>
-            <textarea  name="communinication" id="communinication" style="width: 325px; height: 100px; border: 1px solid #aaaaaa;border-radius: 10px;resize: none;outline-color: #0a88dc;" required>
+            <textarea  name="communinication" id="communinication" style="width: 75%; height: 100px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);resize: none;" required>
           </textarea>
         </div>
         </div>
@@ -300,13 +301,13 @@ Mobile :
                <div class="col-sm-6">
                  <div class="input-box">
                  <label style=""> Pincode </label><br> 
-            <input type="text" name="permanent_pin" id="permanent_pin" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="pinvalidation()"/>
+            <input type="text" name="permanent_pin" id="permanent_pin" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="pinvalidation()"/>
           </div>
           </div>
           <div class="col-sm-6">
              <div class="input-box">
               <label style=""> Country </label><br>
-            <input type="text" name="country" id="count"  size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/>
+            <input type="text" name="country" id="count"  size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
           </div>
         </div>
           </div>
@@ -317,13 +318,13 @@ Mobile :
          <div class="col-sm-6">
              <div class="input-box">
                 <label style=""> State </label><br> 
-            <input type="text" id="states" placeholder="State" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/>
+            <input type="text" id="states" placeholder="State" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
           </div>
         </div>
         <div class="col-sm-6">
              <div class="input-box">
               <label style=""> District </label><br> 
-            <input type="text" id="district" placeholder="District" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;"/>
+            <input type="text" id="district" placeholder="District" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
           </div>
         </div>
       </div>
@@ -332,13 +333,13 @@ Mobile :
          <div class="col-sm-6">
              <div class="input-box">
                 <label style=""> Thaluk </label><br> 
-            <input type="text" id="thaluks" placeholder="Thaluk" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/>
+            <input type="text" id="thaluks" placeholder="Thaluk" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
           </div>
         </div>
         <div class="col-sm-6">
              <div class="input-box">
               <label style=""> Village </label><br> 
-            <input type="text" id="villages" placeholder="Village" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/>
+            <input type="text" id="villages" placeholder="Village" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
           </div>
         </div>
       </div>
@@ -348,20 +349,20 @@ Mobile :
       <div>
         <br><br>
     <div class="add-details">
-<h3 style="font-family: Times New Roman, Times, serif;">Parents Details:</h3><br>
+<h3 style="font-family: Times New Roman, Times, serif;text-align: left !important;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspParents Details:</h3><br>
 </div> 
   <div class="user-details">
   <div class="row">
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Father Name </label> <br>
-  <input type="text" name="father" id="fathname" placeholder="Father Name" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/> 
+  <input type="text" name="father" id="fathname" placeholder="Father Name" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/> 
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Mother Name </label><br> 
-  <input type="text" name="mother" id="mothname" placeholder="Mother Name" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/> 
+  <input type="text" name="mother" id="mothname" placeholder="Mother Name" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/> 
   </div>
 </div>
 </div>
@@ -371,7 +372,7 @@ Mobile :
 <div class="row">
         <div class="col-sm-6">
           <label class="com-title">Is Father Alive</label> <br>  
-          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="fathalive" name="fathlive">
+          <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="fathalive" name="fathlive">
           <option value=""></option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -385,7 +386,7 @@ Mobile :
             </div>
             <div class="col-sm-6">
               <label class="com-title">Is Mother Alive</label> <br>  
-          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;"id="motalive" name="mothlive">
+          <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;"id="motalive" name="mothlive">
           <option value=""></option>
               <option value="Yes" >Yes</option>
               <option value="No">No</option>
@@ -404,19 +405,19 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style="">Guardian Name </label><br> 
-  <input type="text" name="guardian" id="gurd" placeholder="Guardian Name" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/> 
+  <input type="text" name="guardian" id="gurd" placeholder="Guardian Name" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/> 
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Occupation </label><br> 
-  <input type="text" name="occupation" id="occu" placeholder="Occupation" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="data()"/> 
+  <input type="text" name="occupation" id="occu" placeholder="Occupation" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/> 
   </div>
 </div>
 </div>
 </div>
 <br><br><br>
- <h3 style="font-family: Times New Roman, Times, serif;">Educational Details</h3>
+ <h3 style="font-family: Times New Roman, Times, serif;text-align: left !important;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEducational Details</h3>
     <div>
       <br>
   <div class="user-details">
@@ -424,7 +425,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
     <label class="com-title">Scheme</label> <br>  
-          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="schem" name="scheme">
+          <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="schem" name="scheme">
               <option value=""></option>
               <option value="2018-19" >2018-19</option>
               <option value="2019-20" >2019-20</option>
@@ -439,8 +440,8 @@ Mobile :
 </div>
 <div class="col-sm-6">
   <div class="input-box">
- <label style="">SSLC Registration Number &nbsp<span style="color: #FF0000;">*</span></label><br>  
- <input type="text" id="register_number" placeholder="SSLC Registration Number" size="30" required style="border-radius: 10px;width: 60%;height: 40px;outline-color: #0a88dc;" onchange="regivalidation()" />
+ <label style="">SSLC Registration Number &nbsp<b><span style="color: #FF0000;">*</span></b></label><br>  
+ <input type="text" id="register_number" placeholder="SSLC Registration Number" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="regivalidation()" />
  </div> 
 </div>
 </div>
@@ -449,7 +450,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
     <label class="com-title">Month Pass</label><br>   
-          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="monthpass" name="moth">
+          <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="monthpass" name="moth">
           <option value=""></option>  
           <option value="January">January</option>  
           <option value="February">February</option>  
@@ -472,7 +473,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
     <label class="com-title">Year Pass</label> <br>  
-          <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="yearpass" name="year">
+          <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="yearpass" name="year">
               <option value=""></option>
               <option value="2018" >2018</option>
               <option value="2019" >2019</option>
@@ -494,10 +495,10 @@ Mobile :
 </div>
 </div>
 <br><br>
- <h2 style="font-family: Times New Roman, Times, serif;">Grade Card</h2>
+ <h2 style="font-family: Times New Roman, Times, serif;text-align: left !important;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGrade Card</h2>
       <br>
-      <label class="com-title"> Board Syllabus&nbsp<span style="color: #FF0000;">*</span></label> <br>  
-          <select style="width: 29%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="board" name="boardsyll" onchange="eduone()">
+      <label class="com-title"> Board Syllabus&nbsp<b><span style="color: #FF0000;">*</span></b></label> <br>  
+          <select style=" width: 40%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="board" name="boardsyll" onchange="eduone()">
               <option value=""></option>
               <option value="State" >State</option>
               <option value="CBSE" >CBSE</option>
@@ -511,7 +512,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> First Language I </label><br> 
-        <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="firstlang" name="first">
+        <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="firstlang" name="first">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -529,7 +530,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">First Language II</label><br>
-    <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="secondlang" name="second">
+    <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="secondlang" name="second">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -550,7 +551,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style="">  English </label><br> 
-  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="engli" name="english">
+  <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="engli" name="english">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -568,7 +569,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">Hindi</label><br>
- <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="hind" name="hindis">
+ <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="hind" name="hindis">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -589,7 +590,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Social Science </label><br>
-  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="social" name="socialsci">
+  <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="social" name="socialsci">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -607,7 +608,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">Biology</label><br>  
- <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="biolo" name="biology">
+ <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="biolo" name="biology">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -628,7 +629,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Physics </label><br> 
-  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="physi" name="physics">
+  <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="physi" name="physics">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -646,7 +647,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">Chemistry</label><br>  
- <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="chemi" name="chemistry">
+ <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="chemi" name="chemistry">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -667,7 +668,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Mathematics</label><br>
-  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="maths" name="mathsmatics">
+  <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="maths" name="mathsmatics">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -686,7 +687,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">Information Technology</label><br>
- <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="infotec" name="inform">
+ <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="infotec" name="inform">
               <option value=""></option>
               <option value="A+" >A+</option>
               <option value="A" >A</option>
@@ -712,7 +713,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Language I </label><br> 
-  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbselangfirst" name="cbselangfirst">
+  <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="cbselangfirst" name="cbselangfirst">
               <option value=""></option>
               <option value="A1" >A1</option>
               <option value="A2" >A2</option>
@@ -731,7 +732,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">Language II</label><br>  
-  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbselangsecon" name="cbselangsecon">
+  <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="cbselangsecon" name="cbselangsecon">
               <option value=""></option>
               <option value="A1" >A1</option>
               <option value="A2" >A2</option>
@@ -753,7 +754,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style="">   Mathematics </label><br> 
-  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbsemaths" name="cbsemaths">
+  <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="cbsemaths" name="cbsemaths">
               <option value=""></option>
               <option value="A1" >A1</option>
               <option value="A2" >A2</option>
@@ -772,7 +773,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
  <label style="">Science</label><br>  
- <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbsescience" name="cbsescience">
+ <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="cbsescience" name="cbsescience">
               <option value=""></option>
               <option value="A1" >A1</option>
               <option value="A2" >A2</option>
@@ -794,7 +795,7 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style="">   Social Science </label><br> 
-   <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" id="cbsesocial" name="cbsesocial">
+   <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="cbsesocial" name="cbsesocial">
               <option value=""></option>
               <option value="A1" >A1</option>
               <option value="A2" >A2</option>
@@ -814,12 +815,12 @@ Mobile :
 </div>
 </div>
 <br><br><br>
- <h2 style="font-family: Times New Roman, Times, serif;">Extra Curricular Activities</h2> 
+ <h2 style="font-family: Times New Roman, Times, serif;text-align: left !important;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExtra Curricular Activities</h2> 
  <br>
     <div class="row">
         <div class="col-sm-6">
   <h5>Participation in Sports</h5><br>
-   <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" name="sports" id="partsports" required>
+   <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" name="sports" id="partsports" required>
               <option value=""></option>
               <option value="State Level" >State Level</option>
               <option value="Dist 1st(NPSL)">Dist 1st</option>
@@ -840,7 +841,7 @@ Mobile :
 </div>
 <div class="col-sm-6">
   <h5>Participation in Arts</h5><br>
-  <select style="width: 60%;height: 40px;border-radius: 5px;outline-color: #0a88dc;" name="festival" id="partfest" required>
+  <select style=" width: 75%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080; name="festival" id="partfest" required>
               <option value=""></option>
               <option value="State Level" >State Level</option>
               <option value="Dist 1st(NPSL)">Dist A</option>
@@ -1392,9 +1393,9 @@ Mobile :
 </div>
 </div>
   </div> -->
+<br><br>
 
-
-   <div class="tab"><h2 style="font-family: Times New Roman, Times, serif;">Declaration by the Candidate</h2><br>
+   <div class="tab"><h2 style="font-family: Times New Roman, Times, serif;text-align: left !important;">&nbsp&nbsp&nbsp&nbsp&nbspDeclaration by the Candidate</h2><br>
       <p style="font-family: Times New Roman, Times, serif;">I hereby declare that all the information given by me in this application is true and correct to the
 best of my knowledge and belief. I also note that if any of the above statements are found to be
 incorrect or false or any information or particulars have been suppressed or omitted there from, I
@@ -1421,7 +1422,7 @@ admission formalities.</p>
         <div style="float:right;">
           <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
          <!--  <button type="button" id="nextBtn" onclick="nextPrev(1)" style="border: 2px solid #4CAF50;border-radius: 10px;">Next</button> -->
-          <button type="button" id="submitBtn" name="submitBtn" style="border: 5px solid #0a88dc;border-radius: 10px;width: 100px;height: 50px;">Submit</button>
+          <button type="button" id="submitBtn" name="submitBtn" style="border: 5px solid #0a88dc;border-radius: 10px;width: 100px;height: 50px;opacity: 1;">Submit</button>
     
         </div>
   </div>
@@ -1433,5 +1434,7 @@ admission formalities.</p>
     <span class="step"></span>
   </div> -->
 </form>
+</div>
+</center>
 </body>
 {% endblock %}

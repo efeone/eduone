@@ -63,7 +63,7 @@ function mobilevalidation(){
   }
   if(moble){
     console.log(moble.toString().length)
-    if(isNaN(moble) || moble.toString().length >10 )
+    if(isNaN(moble) || moble.toString().length >10 || moble.toString().length <10)
     {
       alert("Invalid Mobile Number !");
       document.getElementById("mobiles").value = "";
