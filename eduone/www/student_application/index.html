@@ -6,7 +6,7 @@
 <!-- <script src="https://code.jquery.com/jqury-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorgin="anonymous"></script> -->
 <script src="assets/js/moment-bundle.min.js"></script>
 <script src="/student_application/index.js"></script>
-<script src="/assets/eduone/js/eduscript.js"></script>
+<script src="/assets/eduone/js/scriptedu.js"></script>
 {% endblock %}
 
 {% block page_content %}
@@ -63,7 +63,7 @@
   <div class="input-box">
 <label style="text-align: left!;">Middle Name</label> 
 <br>  
-<input type="text" name="middlename" id="middlename" placeholder="Middlename" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>  
+<input type="text" name="middlename" id="middlename" placeholder="Middlename" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="middle()"/>  
 </div>
 </div>
 </div>
@@ -75,7 +75,7 @@
   <div class="input-box">
   <label>Last Name&nbsp<b><span style="color: #FF0000;">*</span></b></label> 
   <br>  
-<input type="text" name="lastname" id="lastname" placeholder= "Lastname" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>  
+<input type="text" name="lastname" id="lastname" placeholder= "Lastname" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="last()"/>  
 </div>
 </div>
 <div class="col-sm-6"> 
@@ -261,7 +261,7 @@ Mobile :
         <div class="col-sm-6">
        <div class="input-box">
            <label id="othu" style="display: none;" onchange="panch()"> Others </label>
-         <input type="text" name="other" id="others" placeholder="Other Panchayat" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);display: none;" onchange="panch()"/> 
+         <input type="text" name="other" id="others" placeholder="Other Panchayat" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);display: none;" onchange="panch()" onchange="other()" /> 
       </div>
       </div>
     </div>
@@ -307,7 +307,7 @@ Mobile :
           <div class="col-sm-6">
              <div class="input-box">
               <label style=""> Country </label><br>
-            <input type="text" name="country" id="count"  size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
+            <input type="text" name="country" id="count"  size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="country()"/>
           </div>
         </div>
           </div>
@@ -318,13 +318,13 @@ Mobile :
          <div class="col-sm-6">
              <div class="input-box">
                 <label style=""> State </label><br> 
-            <input type="text" id="states" placeholder="State" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
+            <input type="text" id="states" placeholder="State" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="state()"/>
           </div>
         </div>
         <div class="col-sm-6">
              <div class="input-box">
               <label style=""> District </label><br> 
-            <input type="text" id="district" placeholder="District" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
+            <input type="text" id="district" placeholder="District" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="dist()"/>
           </div>
         </div>
       </div>
@@ -333,13 +333,13 @@ Mobile :
          <div class="col-sm-6">
              <div class="input-box">
                 <label style=""> Thaluk </label><br> 
-            <input type="text" id="thaluks" placeholder="Thaluk" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
+            <input type="text" id="thaluks" placeholder="Thaluk" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="thalu()"/>
           </div>
         </div>
         <div class="col-sm-6">
              <div class="input-box">
               <label style=""> Village </label><br> 
-            <input type="text" id="villages" placeholder="Village" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/>
+            <input type="text" id="villages" placeholder="Village" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="villa()"/>
           </div>
         </div>
       </div>
@@ -356,13 +356,13 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Father Name </label> <br>
-  <input type="text" name="father" id="fathname" placeholder="Father Name" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/> 
+  <input type="text" name="father" id="fathname" placeholder="Father Name" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="fath()"/> 
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Mother Name </label><br> 
-  <input type="text" name="mother" id="mothname" placeholder="Mother Name" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/> 
+  <input type="text" name="mother" id="mothname" placeholder="Mother Name" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="month()"/> 
   </div>
 </div>
 </div>
@@ -405,13 +405,13 @@ Mobile :
 <div class="col-sm-6">
   <div class="input-box">
   <label style="">Guardian Name </label><br> 
-  <input type="text" name="guardian" id="gurd" placeholder="Guardian Name" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/> 
+  <input type="text" name="guardian" id="gurd" placeholder="Guardian Name" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="guid()"/> 
   </div>
 </div>
 <div class="col-sm-6">
   <div class="input-box">
   <label style=""> Occupation </label><br> 
-  <input type="text" name="occupation" id="occu" placeholder="Occupation" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="data()"/> 
+  <input type="text" name="occupation" id="occu" placeholder="Occupation" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="occup()"/> 
   </div>
 </div>
 </div>
