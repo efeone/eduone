@@ -6,7 +6,7 @@
 <!-- <script src="https://code.jquery.com/jqury-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorgin="anonymous"></script> -->
 <script src="assets/js/moment-bundle.min.js"></script>
 <script src="/student_application/index.js"></script>
-<script src="/assets/eduone/js/scriptedu.js"></script>
+<script src="/assets/eduone/js/script.js"></script>
 {% endblock %}
 
 {% block page_content %}
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.0/css/line.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    <!--  <link rel="stylesheet" href="assets/one_fm/assets/css/job_application.css"> -->
  <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
    <!--  <link rel="stylesheet" type="text/css" href="/assets/eduone/css/style.css"> -->
@@ -25,7 +26,7 @@
 
 </head>
 <center>
-<body style="height: 100vh;align-items: center;background: linear-gradient(135deg, #e8edff, #e8edff);">
+<body style="height: 100vh;align-items: center;background: linear-gradient(135deg, #56c1db, #56c1db);">
   <div style="max-width: 900px;width: 100%;background-color: #fff;padding: 25px 30px;border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;border-radius: 10px;">
 <form id="regForm" action="/action_page.php">
   <b><h1 style="font-family: Times New Roman, Times, serif;">STUDENT APPLICATION FORM</h1></b>
@@ -301,13 +302,13 @@ Mobile :
                <div class="col-sm-6">
                  <div class="input-box">
                  <label style=""> Pincode </label><br> 
-            <input type="text" name="permanent_pin" id="permanent_pin" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="pinvalidation()"/>
+            <input type="text" name="permanent_pin" id="permanent_pin" placeholder="Pincode" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="pinvalidation()"/>
           </div>
           </div>
           <div class="col-sm-6">
              <div class="input-box">
               <label style=""> Country </label><br>
-            <input type="text" name="country" id="count"  size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="country()"/>
+            <input type="text" name="country" id="count" placeholder="Country" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="countrys()"/>
           </div>
         </div>
           </div>
@@ -318,7 +319,7 @@ Mobile :
          <div class="col-sm-6">
              <div class="input-box">
                 <label style=""> State </label><br> 
-            <input type="text" id="states" placeholder="State" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="state()"/>
+            <input type="text" id="states" placeholder="State" size="30" required style="width: 75%;height: 40px;outline-color: #0a88dc;font-size: 16px;border-radius: 7px;padding-left: 15px;border: 1.5px solid #808080;border-bottom-width: 2px;transition: all 0.3s ease;box-shadow: 0 5px 10px rgba(0,0,0,0.25);" onchange="statess()"/>
           </div>
         </div>
         <div class="col-sm-6">
@@ -498,7 +499,7 @@ Mobile :
  <h2 style="font-family: Times New Roman, Times, serif;text-align: left !important;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGrade Card</h2>
       <br>
       <label class="com-title"> Board Syllabus&nbsp<b><span style="color: #FF0000;">*</span></b></label> <br>  
-          <select style=" width: 40%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="board" name="boardsyll" onchange="eduone()">
+          <select style=" width: 35%;height: 40px;border-radius: 5px;outline-color: #0a88dc;background-color: #edf0f5;outline-color: #0a88dc;box-shadow: 0 5px 10px rgba(0,0,0,0.25);border: 1.5px solid #808080;" id="board" name="boardsyll" onchange="eduone()">
               <option value=""></option>
               <option value="State" >State</option>
               <option value="CBSE" >CBSE</option>
@@ -1404,7 +1405,7 @@ contents of the Admission Announcement for the various Programmes. I hereby perm
 to use, display or transfer any of the details furnished by me in this form for complying with the
 admission formalities.</p>
     
-    <p><fieldset>
+    <p>
     <input id="agree" type="checkbox" value="value1" name="yy" required="" style="border: 2px solid #0a88dc;">
     <label for="a">Agreed</label>
     <!-- <input type="checkbox" id="b"> -->
@@ -1412,7 +1413,7 @@ admission formalities.</p>
   <!--   <label for="b">b</label>
     <input type="checkbox" id="c">
     <label for="c">c</label> -->
-</fieldset></p>
+</p>
     <!-- <p><fieldset id="yy" style="width: 30px;height: 30;">
     <h>Agreed</h><input type="checkbox" value="value1" name="yy" required="" style="border: 2px solid #0a88dc;">
   </fieldset></p> -->
@@ -1422,7 +1423,7 @@ admission formalities.</p>
         <div style="float:right;">
           <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
          <!--  <button type="button" id="nextBtn" onclick="nextPrev(1)" style="border: 2px solid #4CAF50;border-radius: 10px;">Next</button> -->
-          <button type="button" id="submitBtn" name="submitBtn" style="border: 5px solid #0a88dc;border-radius: 10px;width: 100px;height: 50px;opacity: 1;">Submit</button>
+          <button class="w3-button w3-border w3-hover-light-blue w3-btn w3-white w3-border w3-border-blue w3-round-large" type="button" id="submitBtn" name="submitBtn" style="outline-color: #0a88dc;border: 5px solid #0a88dc;border-radius: 10px;width: 100px;height: 50px;opacity: 1;">Submit</button>
     
         </div>
   </div>

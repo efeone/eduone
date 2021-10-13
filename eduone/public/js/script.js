@@ -171,7 +171,7 @@ function other(){
     }
   }
 }
-function country(){
+function countrys(){
   var country = document.getElementById("count").value;
   if(country){
     console.log(country.toString().length)
@@ -182,11 +182,11 @@ function country(){
     }
   }
 }
-function state(){
+function statess(){
   var state = document.getElementById("states").value;
   if(state){
     console.log(state.toString().length)
-    if(!isNaN(state) || other.toString().length >30 )
+    if(!isNaN(state) || state.toString().length >30 )
     {
       alert("Invalid details, Number not allowed!");
       document.getElementById("states").value = "";
